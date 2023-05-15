@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       <header>
-        <a href="/">2ndHand Book</a>
+        <a href="/">2ndHanddd Book</a>
       </header>
       <main>list products</main>
     </div>
