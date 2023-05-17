@@ -6,6 +6,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+main{
+  padding: 1rem;
+}
 
 header{
   background-color: greenyellow;
@@ -16,4 +19,26 @@ header a{
   font-weight: bold;
   font-size: large;
   text-decoration: none;
+}
+.products{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+
+
+  
+}
+
+.product{
+  border: 1px #404048 solid;
+  margin: 1rem;
+  
+
+}
+.product img{
+
+  width : 250px ;
+  height: 200px;
+  max-width: 400px;
 }
