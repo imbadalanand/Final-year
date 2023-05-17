@@ -29,7 +29,7 @@ const data={
         },
         {
             name: 'The Bombing War',
-            slug: 'political-science',
+            slug: '-bomb-war',
             language:'English',
             category: 'WAR',
             image:'/images/thebombing.jpg',
