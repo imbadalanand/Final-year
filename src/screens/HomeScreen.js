@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import data from '../data';
+import PRODUCTS from '../data';
 function HomeScreen (){
     return(
         <>
@@ -7,13 +7,13 @@ function HomeScreen (){
              <h1>Featured Books</h1>
             <div className="products">
                 {
-                data.products.map(product => (
+                PRODUCTS.products.map(product => (
                 <div className='product' key={product.key}>
-                <Link to={`/product/${product.slug}`}>
+                <Link to={`/product/${product.id}`}>
                 <img src={product.image} alt={product.name}/>
                 </Link>
 
-                <Link to={`/product/${product.slug}`}>
+                <Link to={`/product/${product.id}`}>
                 <p>{product.name}</p>
                 </Link>
                
