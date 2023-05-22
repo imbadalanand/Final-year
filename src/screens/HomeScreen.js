@@ -13,13 +13,16 @@ function HomeScreen (){
                 <img src={product.image} alt={product.name}/>
                 </Link>
 
-                <Link to={`/product/${product.id}`}>
+               <div className='card-detail'>
+               <Link to={`/product/${product.id}`}>
                 <p>{product.name}</p>
                 </Link>
                
-                <p>{product.language},{product.category},{product.author}</p>
-                <p> <i class="fa fa-inr"></i>{product.price}</p>
-                    <button>Add to Cart</button>
+                <p>{product.category},{product.author}</p>
+                <p> <i class="fa fa-inr"></i>{product.price}<span><button>Add to Cart</button></span></p>
+                
+                </div>
+                    
                 </div>))
                 }
             </div>
