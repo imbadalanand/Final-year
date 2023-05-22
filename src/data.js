@@ -1,8 +1,8 @@
-const data={
+const PRODUCTS={
     products : [
         {
             name: 'Political Science',
-            slug: 'political-science',
+            id: 1,
             language:'Hindi',
             category: 'Comparative Politics',
             image:'/images/polscience.jpg',
@@ -16,7 +16,7 @@ const data={
         },
         {
             name: 'Losing Hope',
-            slug: 'political-science',
+            id: 2,
             language:'English',
             category: 'Romance',
             image:'/images/losing-hope.jpg',
@@ -29,7 +29,7 @@ const data={
         },
         {
             name: 'The Bombing War',
-            slug: '-bomb-war',
+            id: 3,
             language:'English',
             category: 'WAR',
             image:'/images/thebombing.jpg',
@@ -42,7 +42,7 @@ const data={
         },
         {
             name: 'India is My Dream',
-            slug: 'political-science',
+            id: 4,
             language: 'Hindi',
             category: 'Biography',
             image:'/images/gandhi.jpg',
@@ -55,7 +55,7 @@ const data={
         },
         {
             name: 'Political Science',
-            slug: 'political-science',
+            id: 5,
             language:'Hindi',
             category: 'Comparative Politics',
             image:'/images/polscience.jpg',
@@ -69,7 +69,7 @@ const data={
         },
         {
             name: 'Losing Hope',
-            slug: 'political-science',
+            id: 6,
             language:'English',
             category: 'Romance',
             image:'/images/losing-hope.jpg',
@@ -82,7 +82,7 @@ const data={
         },
         {
             name: 'The Bombing War',
-            slug: 'political-science',
+            id: 7,
             language:'English',
             category: 'WAR',
             image:'/images/thebombing.jpg',
@@ -95,7 +95,7 @@ const data={
         },
         {
             name: 'India is My Dream',
-            slug: 'political-science',
+            id: 8,
             language: 'Hindi',
             category: 'Biography',
             image:'/images/gandhi.jpg',
@@ -109,4 +109,4 @@ const data={
     ]
 }
 
-export default data;
+export default PRODUCTS;

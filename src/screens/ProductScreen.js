@@ -2,10 +2,10 @@ import { useParams } from "react-router-dom";
 
 function ProductScreen(){
     const params = useParams();
-    const {slug} = params;
+    const {id} = params;
     return <div>
         <h1>
-           {slug} 
+           {id} 
         </h1>
     </div>
 }
