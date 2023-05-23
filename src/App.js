@@ -4,6 +4,12 @@ import { BrowserRouter as Router, Route, Routes, } from "react-router-dom";
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen'
 import Navbar from "./components/Navbar"
+import Login from "./components/Login"
+import Signup from "./components/Signup"
+import Contact from "./components/Contact"
+import Cart from "./components/Cart"
+import Footer from "./components/Footer"
+
 
 function App() {
   return (
