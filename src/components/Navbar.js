@@ -41,7 +41,7 @@ const Navbar = () => {
                             <button className="btn btn-outline-success" type="submit">Search</button>
                         </form>
                         <Link to="#"><i className="fa-solid fa-bell" style={{margin:"10px 10px", color: "white"}} ></i></Link>
-                        <Link to="#" ><i className="fa-solid fa-cart-shopping" style={{margin:"10px 10px", color: "white"}} ></i></Link>
+                        <Link to="/Cart" ><i className="fa-solid fa-cart-shopping" style={{margin:"10px 10px", color: "white"}} ></i></Link>
                         <Link to="/Login" ><i className="fa-solid fa-user" style={{margin:"10px 10px", color: "white"}} ></i></Link>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
-const PRODUCTS={
-    products : [
+export const PRODUCTS={
+    products: [
         {
             name: 'Political Science',
             id: 1,
