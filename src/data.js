@@ -4,7 +4,7 @@ const PRODUCTS={
             name: 'Political Science',
             id: 1,
             language:'Hindi',
-            category: 'Comparative Politics',
+            category: 'Politics',
             image:'/images/polscience.jpg',
             price: 120,
             countInStock: 2,
