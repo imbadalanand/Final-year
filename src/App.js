@@ -5,9 +5,10 @@ import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen'
 import Navbar from "./components/Navbar"
 import Login from "./components/Login"
-import Signup from "./components/Signup";
-import Contact from "./components/Contact";
-import Cart from "./components/Cart";
+import Signup from "./components/Signup"
+import Contact from "./components/Contact"
+import Cart from "./components/Cart"
+import Footer from "./components/Footer"
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
     <div>
       <header>
         <Navbar />
+        
       </header>
       <main>
         <Routes>
@@ -31,7 +33,10 @@ function App() {
         
       </main>
     </div>
+    <Footer/>
     </Router>
+    
+    
   );
 }
 
