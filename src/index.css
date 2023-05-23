@@ -24,21 +24,73 @@ main{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  
+ 
 
 
   
 }
 
 .product{
-  border: 1px #404048 solid;
+  border: 1px #cccce1 solid;
   margin: 1rem;
-  
-
+  border-radius: 10px;
+  cursor:pointer;
+  width:250px;
+  overflow: hidden;
+  transition: transform .2s;
+  height: 310px;
 }
-.product img{
 
-  width : 250px ;
+.product:hover {
+  transform: scale(1.2);
+  z-index: 1000;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.product img{
+  align-items: center;
+  border-radius: 8px;
+  margin-left: 8px;
+  margin-top: 8px;
+  width : 230px ;
   height: 200px;
   max-width: 400px;
+}
+
+.card-detail{
+  margin-left: 15px;
+  display:inline-block;
+  
+  justify-items: center;
+}
+.card-detail p{
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.card-detail p:nth-child(1){
+  text-decoration: none;
+  text-align: center;
+  margin-top: 10px;
+font-weight: 700;
+color: black;
+
+}
+.card-detail p:nth-child(2){
+  text-align: center;
+  margin-top: -17px;
+  color: #767676;
+}
+.card-detail p:nth-child(3){
+  
+  margin-top: -15px;
+  color: #000000;
+  font-weight:bold;
+}
+
+.card-detail button {
+  margin-left: 80px;
+border-radius: 15px;
+background-color:rgb(28, 130, 255) ;
+color: wheat;
+font-weight:500;
 }

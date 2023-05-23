@@ -4,8 +4,6 @@ import { BrowserRouter as Router, Route, Routes, } from "react-router-dom";
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen'
 import Navbar from "./components/Navbar"
-import Footer from "./components/Footer";
-
 
 function App() {
   return (
@@ -20,6 +18,11 @@ function App() {
         <Routes>
           <Route path="/product/:slug" element={<ProductScreen />} />
           <Route path="/" element={<HomeScreen />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/Signup" element={<Signup/>} />
+          <Route path="/Contact" element={<Contact/>} />
+          <Route path="/Cart" element={<Cart/>} />
+
         </Routes>
         
       </main>
