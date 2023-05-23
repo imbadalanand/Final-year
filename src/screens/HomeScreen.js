@@ -38,17 +38,20 @@ function HomeScreen (){
                 {
                 PRODUCTS.products.map(product => (
                 <div className='product' key={product.key}>
-                <Link to={`/product/${product.id}`}>
-                <img src={product.image} alt={product.name}/>
-                </Link>
+                  <Link to={`/product/${product.id}`}>
+                  <img src={product.image} alt={product.name}/>
+                  </Link>
 
-                <Link to={`/product/${product.id}`}>
-                <p>{product.name}</p>
-                </Link>
-               
-                <p>{product.language},{product.category},{product.author}</p>
-                <p> <i class="fa fa-inr"></i>{product.price}</p>
-                    <button onClick={(e)=>handleAddToCart(e,product)}>Add to Cart</button>
+                   <div className='card-detail'>
+                     <Link to={`/product/${product.id}`}>
+                      <p>{product.name}</p>
+                      </Link>
+
+                      <p>{product.category},{product.author}</p>
+                      <p> <i class="fa fa-inr"></i>{product.price}<span><button>Add to Cart</button></span></p>
+
+                    </div>
+
                 </div>))
                 }
             </div>
