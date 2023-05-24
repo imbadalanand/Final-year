@@ -82,7 +82,7 @@ const Contact = () => {
                             </li>
 
                             <li><i className="fas fa-phone mt-4 fa-2x"></i>
-                                <p>+91 7004493428</p>
+                                <p>+91 9661671360</p>
                             </li>
 
                             <li><i className="fas fa-envelope mt-4 fa-2x"></i>

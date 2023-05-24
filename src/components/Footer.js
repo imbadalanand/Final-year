@@ -5,11 +5,11 @@ const Footer = () => {
   return (
     <div>
      
-<footer class="text-center text-lg-start bg-light text-muted">
+<footer className="text-center text-lg-start bg-light text-muted">
  
-  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+  <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
     
-    <div class="me-5 d-none d-lg-block">
+    <div className="me-5 d-none d-lg-block">
       <span>Get connected with us on social networks:</span>
     </div>
     
@@ -21,76 +21,76 @@ const Footer = () => {
  
 
  
-  <section class="">
-    <div class="container text-center text-md-start mt-5">
+  <section className="">
+    <div className="container text-center text-md-start mt-5">
     
-      <div class="row mt-3">
+      <div className="row mt-3">
        
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+        <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
           
-          <h6 class="text-uppercase fw-bold mb-4">
-            <i class="fas fa-gem me-3"></i>Company name
+          <h6 className="text-uppercase fw-bold mb-4">
+            <i className="fas fa-gem me-3"></i>Company name
           </h6>
           <p>
-            Here you can use rows and columns to organize your footer content. Lorem ipsum
-            dolor sit amet, consectetur adipisicing elit.
+          Empowering minds through the magic of books, connecting readers and sellers with knowledge and inspiration.
           </p>
         </div>
      
 
        
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+        <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
          
-          <h6 class="text-uppercase fw-bold mb-4">
+          <h6 className="text-uppercase fw-bold mb-4">
             Products
           </h6>
           <p>
-            <Link to="#!" class="text-reset">Angular</Link>
+            <Link to="#!" className="text-reset">BookBazaar</Link>
           </p>
           <p>
-            <Link to="#!" class="text-reset">React</Link>
+            <Link to="#!" className="text-reset">NovelNook</Link>
           </p>
           <p>
-            <Link to="#!" class="text-reset">Vue</Link>
+            <Link to="#!" className="text-reset">BookHive</Link>
           </p>
           <p>
-            <Link to="#!" class="text-reset">Laravel</Link>
+            <Link to="#!" className="text-reset">Bookiverse</Link>
           </p>
         </div>
        
 
        
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+        <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
          
-          <h6 class="text-uppercase fw-bold mb-4">
+          <h6 className="text-uppercase fw-bold mb-4">
             Useful links
           </h6>
           <p>
-            <Link to="#!" class="text-reset">Pricing</Link>
+            <Link to="#!" className="text-reset">Pricing</Link>
           </p>
           <p>
-            <Link to="#!" class="text-reset">Settings</Link>
+            <Link to="#!" className="text-reset">Settings</Link>
           </p>
           <p>
-            <Link to="#!" class="text-reset">Orders</Link>
+            <Link to="#!" className="text-reset">Orders</Link>
           </p>
           <p>
-            <Link to="#!" class="text-reset">Help</Link>
+            <Link to="#!" className="text-reset">Help</Link>
           </p>
         </div>
        
 
         
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+        <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
          
-          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-          <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+          <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i className="fas fa-home me-3"></i> Patna, Bihar, India</p>
           <p>
-            <i class="fas fa-envelope me-3"></i>
-            info@example.com
+            <i className="fas fa-envelope me-3"></i>
+            contact@refurbishedbook.com
           </p>
-          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+          <p><i className="fas fa-phone me-3"></i> +919661671360</p>
+          <p><i className="fas fa-phone me-3"></i> +916207130873</p>
+          <p><i className="fas fa-phone me-3"></i> +917004493428 </p>
         </div>
        
       </div>
@@ -100,9 +100,9 @@ const Footer = () => {
 
 
  
-  <div class="text-center p-4" style={{backgroundColor: "grey"}}>
+  <div className="text-center p-4" style={{backgroundColor: "grey"}}>
     © 2023 Copyright:
-    <Link class="text-reset fw-bold" to="https://mdbootstrap.com/">Harshit, Hemant & Badal</Link>
+    <Link className="text-reset fw-bold">Harshit, Hemant & Badal</Link>
   </div>
 
 </footer>

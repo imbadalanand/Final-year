@@ -184,7 +184,7 @@ const Cart = () => {
                 </div>
               </div> */}
 {
-data?.length !=0 ? <>
+data?.length !==0 ? <>
               <div className="card mb-4">
                 <div className="card-body p-4 d-flex flex-row">
                   <div className="form-outline flex-fill">
@@ -212,3 +212,4 @@ data?.length !=0 ? <>
 }
 
 export default Cart
+
