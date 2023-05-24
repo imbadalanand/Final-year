@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import PRODUCTS from '../data';
-import Cart from '../components/Cart';
 import { useEffect, useState } from 'react';
 
 function HomeScreen (){
@@ -34,6 +33,7 @@ function HomeScreen (){
         <>
         <div>
              <h1>Featured Books</h1>
+             <hr />
             <div className="products">
                 {
                 PRODUCTS.products.map(product => (
