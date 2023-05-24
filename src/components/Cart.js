@@ -95,7 +95,10 @@ const Cart = () => {
                       <button type="button" className="btn btn-warning btn-block btn-lg">Proceed to Pay</button>
                     </div>
                   </div>
+
+
                 </> : <h1>Cart Is Empty</h1>
+
               }
 
             </div>
@@ -107,3 +110,4 @@ const Cart = () => {
 }
 
 export default Cart
+

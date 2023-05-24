@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 const Footer = () => {
   return (
     <div>
+
       <hr className="text-center text-lg-start bg-light text-muted"/>
 
       <footer >
@@ -29,6 +30,7 @@ const Footer = () => {
 
               <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 
+
                 <h6 className="text-uppercase fw-bold mb-4">
                 <i className="fas fa-book-open-cover me-3"></i>Refurbished Book Store
                 </h6>
@@ -36,6 +38,7 @@ const Footer = () => {
                 The Refurbished bookstore adds a modern, minimal visual layer to any e-comm bookstore site, perfect for authors, bloggers, stores, and publishers to showcase their works in the best way possible.
                 </p>
               </div>
+
 
 
 
