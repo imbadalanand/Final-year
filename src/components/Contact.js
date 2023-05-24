@@ -86,7 +86,7 @@ const Contact = () => {
                             </li>
 
                             <li><i className="fas fa-envelope mt-4 fa-2x"></i>
-                                <p>contact@refurbishedbookstore.com</p>
+                                <p>computerhubsarai.com</p>
                             </li>
                         </ul>
                     </div>
