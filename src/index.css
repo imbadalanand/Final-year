@@ -41,11 +41,7 @@ main{
   height: 310px;
 }
 
-.product:hover {
-  transform: scale(1.2);
-  z-index: 1000;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
+
 
 .product img{
   align-items: center;
@@ -93,4 +89,9 @@ border-radius: 15px;
 background-color:rgb(28, 130, 255) ;
 color: wheat;
 font-weight:500;
+}
+h1{
+  font-size: 26px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
 }
