@@ -48,10 +48,10 @@ function HomeScreen (){
                       </Link>
 
                       <p>{product.category},{product.author}</p>
-                      <p> <i class="fa fa-inr"></i>{product.price}<span><button>Add to Cart</button></span></p>
+                      <p> <i class="fa fa-inr"></i>{product.price}<span><button onClick={(e)=>handleAddToCart(e, product)}>Add to Cart</button></span></p>
 
                     </div>
-
+                    
                 </div>))
                 }
             </div>
