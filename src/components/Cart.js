@@ -5,8 +5,20 @@ const Cart = () => {
 
   const [data, setData] = useState(JSON.parse(localStorage.getItem("cart")))
 
-  console.log(data, 8)
+  const [quantity, setQuantity] = useState(1)
 
+  // console.log(data, 8)
+
+  const handleIncQty = () => {
+    console.log("here")
+    setQuantity(quantity + 1)
+  }
+
+  const handleDecQty = () => {
+    if (quantity > 0) {
+      setQuantity((prev) => prev - 1)
+    }
+  }
 
 
   return (
@@ -46,25 +58,29 @@ const Cart = () => {
                         <div className="col-md-2 col-lg-2 col-xl-2">
                           <img
                             src={product?.image}
-                            className="img-fluid rounded-3" alt="Cotton T-shirt" />
+                            className="img-fluid rounded-3" alt="book pic" />
                         </div>
                         <div className="col-md-3 col-lg-3 col-xl-3">
                           <p className="lead fw-normal mb-2">{product?.name}</p>
-                          <p class="lead fw-sm mb-2">{product?.description.substring(1,24)+"..."}</p>
+                          <p class="lead fw-sm mb-2">{product?.description.substring(1, 24) + "..."}</p>
                         </div>
                         <div className="col-md-3 col-lg-3 col-xl-2 d-flex">
+
                           <button className="btn btn-link px-2"
-                            onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                            onClick={handleDecQty}>
                             <i className="fas fa-minus"></i>
                           </button>
 
-                          <input id="form1" min="0" name="quantity" value="1" type="number"
+                          <input id="form1" min="0" name="quantity" value={quantity} readOnly type="number"
                             className="form-control form-control-sm" />
 
+                          {/* <span>{quantity}</span> */}
+
                           <button className="btn btn-link px-2"
-                            onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                            onClick={handleIncQty}>
                             <i className="fas fa-plus"></i>
                           </button>
+
                         </div>
                         <div className="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
                           <h5 className="mb-0">{product?.price}</h5>
@@ -78,129 +94,26 @@ const Cart = () => {
                 )
               })}
 
+              {
+                data?.length !== 0 ?
+                  <>
+                    <div className="card mb-4">
+                      <div className="card-body p-4 d-flex flex-row">
+                        <div className="form-outline flex-fill">
+                          <input type="text" id="form1" className="form-control form-control-lg" placeholder='Apply Coupon here' />
+                          <label className="form-label" for="form1">Discount code</label>
+                        </div>
+                        <button type="button" className="btn btn-outline-primary ms-3">Apply</button>
+                      </div>
+                    </div>
 
-              {/* <div className="card rounded-3 mb-4">
-                <div className="card-body p-4">
-                  <div className="row d-flex justify-content-between align-items-center">
-                    <div className="col-md-2 col-lg-2 col-xl-2">
-                      <img
-                        src="./images/losing-hope.jpg"
-                        className="img-fluid rounded-3" alt="Cotton T-shirt" />
+                    <div className="card">
+                      <div className="card-body">
+                        <button type="button" className="btn btn-warning btn-block btn-lg">Proceed to Pay</button>
+                      </div>
                     </div>
-                    <div className="col-md-3 col-lg-3 col-xl-3">
-                      <p className="lead fw-normal mb-2"> Losing Hope</p>
-                    </div>
-                    <div className="col-md-3 col-lg-3 col-xl-2 d-flex">
-                      <button className="btn btn-link px-2"
-                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                        <i className="fas fa-minus"></i>
-                      </button>
-
-                      <input id="form1" min="0" name="quantity" value="2" type="number"
-                        className="form-control form-control-sm" />
-
-                      <button className="btn btn-link px-2"
-                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                        <i className="fas fa-plus"></i>
-                      </button>
-                    </div>
-                    <div className="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                      <h5 className="mb-0">Rs. 199.00</h5>
-                    </div>
-                    <div className="col-md-1 col-lg-1 col-xl-1 text-end">
-                      <a href="#!" className="text-danger"><i className="fas fa-trash fa-lg"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="card rounded-3 mb-4">
-                <div className="card-body p-4">
-                  <div className="row d-flex justify-content-between align-items-center">
-                    <div className="col-md-2 col-lg-2 col-xl-2">
-                      <img
-                        src="./images/thebombing.jpg"
-                        className="img-fluid rounded-3" alt="Cotton T-shirt" />
-                    </div>
-                    <div className="col-md-3 col-lg-3 col-xl-3">
-                      <p className="lead fw-normal mb-2">The Bombing War</p>
-                    </div>
-                    <div className="col-md-3 col-lg-3 col-xl-2 d-flex">
-                      <button className="btn btn-link px-2"
-                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                        <i className="fas fa-minus"></i>
-                      </button>
-
-                      <input id="form1" min="0" name="quantity" value="2" type="number"
-                        className="form-control form-control-sm" />
-
-                      <button className="btn btn-link px-2"
-                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                        <i className="fas fa-plus"></i>
-                      </button>
-                    </div>
-                    <div className="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                      <h5 className="mb-0">Rs.499.00</h5>
-                    </div>
-                    <div className="col-md-1 col-lg-1 col-xl-1 text-end">
-                      <Link to="#!" className="text-danger"><i className="fas fa-trash fa-lg"></i></Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="card rounded-3 mb-4">
-                <div className="card-body p-4">
-                  <div className="row d-flex justify-content-between align-items-center">
-                    <div className="col-md-2 col-lg-2 col-xl-2">
-                      <img
-                        src="./images/gandhi.jpg"
-                        className="img-fluid rounded-3" alt="Cotton T-shirt" />
-                    </div>
-                    <div className="col-md-3 col-lg-3 col-xl-3">
-                      <p className="lead fw-normal mb-2">India is My Country</p>
-                    </div>
-                    <div className="col-md-3 col-lg-3 col-xl-2 d-flex">
-                      <button className="btn btn-link px-2"
-                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                        <i className="fas fa-minus"></i>
-                      </button>
-
-                      <input id="form1" min="0" name="quantity" value="2" type="number"
-                        className="form-control form-control-sm" />
-
-                      <button className="btn btn-link px-2"
-                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                        <i className="fas fa-plus"></i>
-                      </button>
-                    </div>
-                    <div className="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                      <h5 className="mb-0">Rs. 390.00</h5>
-                    </div>
-                    <div className="col-md-1 col-lg-1 col-xl-1 text-end">
-                      <a href="#!" className="text-danger"><i className="fas fa-trash fa-lg"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div> */}
-{
-data?.length !=0 ? <>
-              <div className="card mb-4">
-                <div className="card-body p-4 d-flex flex-row">
-                  <div className="form-outline flex-fill">
-                    <input type="text" id="form1" className="form-control form-control-lg" />
-                    <label className="form-label" for="form1">Discount code</label>
-                  </div>
-                  <button type="button" className="btn btn-outline-warning ms-3">Apply</button>
-                </div>
-              </div>
-
-              <div className="card">
-                <div className="card-body">
-                  <button type="button" className="btn btn-warning btn-block btn-lg">Proceed to Pay</button>
-                </div>
-              </div>
-             </> : <h1>Cart Is Empty</h1>
+                  </>
+                  : <h1>Cart Is Empty</h1>
               }
 
             </div>
