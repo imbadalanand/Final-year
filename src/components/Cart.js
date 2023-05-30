@@ -5,8 +5,20 @@ const Cart = () => {
 
   const [data, setData] = useState(JSON.parse(localStorage.getItem("cart")))
 
-  console.log(data, 8)
+  const [quantity, setQuantity] = useState(1)
 
+  // console.log(data, 8)
+
+  const handleIncQty = () => {
+    console.log("here")
+    setQuantity(quantity + 1)
+  }
+
+  const handleDecQty = () => {
+    if (quantity > 0) {
+      setQuantity((prev) => prev - 1)
+    }
+  }
 
 
   return (
@@ -46,25 +58,29 @@ const Cart = () => {
                         <div className="col-md-2 col-lg-2 col-xl-2">
                           <img
                             src={product?.image}
-                            className="img-fluid rounded-3" alt="Cotton T-shirt" />
+                            className="img-fluid rounded-3" alt="book pic" />
                         </div>
                         <div className="col-md-3 col-lg-3 col-xl-3">
                           <p className="lead fw-normal mb-2">{product?.name}</p>
                           <p class="lead fw-sm mb-2">{product?.description.substring(1, 24) + "..."}</p>
                         </div>
                         <div className="col-md-3 col-lg-3 col-xl-2 d-flex">
+
                           <button className="btn btn-link px-2"
-                            onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                            onClick={handleDecQty}>
                             <i className="fas fa-minus"></i>
                           </button>
 
-                          <input id="form1" min="0" name="quantity" value="1" type="number"
+                          <input id="form1" min="0" name="quantity" value={quantity} readOnly type="number"
                             className="form-control form-control-sm" />
 
+                          {/* <span>{quantity}</span> */}
+
                           <button className="btn btn-link px-2"
-                            onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                            onClick={handleIncQty}>
                             <i className="fas fa-plus"></i>
                           </button>
+
                         </div>
                         <div className="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
                           <h5 className="mb-0">{product?.price}</h5>
@@ -79,26 +95,25 @@ const Cart = () => {
               })}
 
               {
-                data?.length !== 0 ? <>
-                  <div className="card mb-4">
-                    <div className="card-body p-4 d-flex flex-row">
-                      <div className="form-outline flex-fill">
-                        <input type="text" id="form1" className="form-control form-control-lg" />
-                        <label className="form-label" for="form1">Discount code</label>
+                data?.length !== 0 ?
+                  <>
+                    <div className="card mb-4">
+                      <div className="card-body p-4 d-flex flex-row">
+                        <div className="form-outline flex-fill">
+                          <input type="text" id="form1" className="form-control form-control-lg" placeholder='Apply Coupon here' />
+                          <label className="form-label" for="form1">Discount code</label>
+                        </div>
+                        <button type="button" className="btn btn-outline-primary ms-3">Apply</button>
                       </div>
-                      <button type="button" className="btn btn-outline-warning ms-3">Apply</button>
                     </div>
-                  </div>
 
-                  <div className="card">
-                    <div className="card-body">
-                      <button type="button" className="btn btn-warning btn-block btn-lg">Proceed to Pay</button>
+                    <div className="card">
+                      <div className="card-body">
+                        <button type="button" className="btn btn-warning btn-block btn-lg">Proceed to Pay</button>
+                      </div>
                     </div>
-                  </div>
-
-
-                </> : <h1>Cart Is Empty</h1>
-
+                  </>
+                  : <h1>Cart Is Empty</h1>
               }
 
             </div>

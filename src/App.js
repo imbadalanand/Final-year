@@ -10,6 +10,9 @@ import Contact from "./components/Contact"
 import Cart from "./components/Cart"
 import Footer from "./components/Footer"
 import Wishlist from "./components/Wishlist";
+import Admin from "./components/Admin";
+import Carousel from "./components/Carousel";
+import Pagination from "./components/Pagination";
 
 
 function App() {
@@ -29,6 +32,11 @@ function App() {
           <Route path="/Contact" element={<Contact/>} />
           <Route path="/Cart" element={<Cart/>} />
           <Route path="/Wishlist" element={<Wishlist/>} />
+          <Route path="/Admin" element={<Admin/>} />
+          <Route path="/Carousel" element={<Carousel/>} />
+          <Route path="/Pagination" element={<Pagination/>} />
+
+
         </Routes>       
       </main>
     </div>

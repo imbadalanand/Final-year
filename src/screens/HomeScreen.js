@@ -1,64 +1,68 @@
 import { Link } from 'react-router-dom';
 import PRODUCTS from '../data';
 import { useEffect, useState } from 'react';
+import Carousel from '../components/Carousel';
+import Pagination from '../components/Pagination';
 
-function HomeScreen (){
+function HomeScreen() {
 
-   const [cart, setCart] = useState([])
-   const [refresh, setRefresh] = useState(false)
+    const [cart, setCart] = useState([])
+    const [refresh, setRefresh] = useState(false)
 
-   console.log(cart)
+    console.log(cart)
 
     const handleAddToCart = (e, product) => {
 
         console.log(e)
         console.log(product)
 
-        setCart((prev)=> [...prev, product])
+        setCart((prev) => [...prev, product])
         setRefresh(!refresh)
         // setCart([...cart , product ])
         // setCart([product])
-        
+
     }
 
-    useEffect(()=> {
+    useEffect(() => {
 
-        if(cart.length > 0){
+        if (cart.length > 0) {
             localStorage.setItem("cart", JSON.stringify(cart))
         }
-       
+
     }, [refresh])
-    
-    return(
+
+    return (
         <>
-        <div>
-             <h1>Featured Books</h1>
-             <hr />
-            <div className="products">
-                {
-                PRODUCTS.products.map(product => (
-                <div className='product' key={product.key}>
-                  <Link to={`/product/${product.id}`}>
-                  <img src={product.image} alt={product.name}/>
-                  </Link>
+            <div>
+                <Carousel />
+                <hr />
+                <h1>Featured Books</h1>
+                <hr />
 
-                   <div className='card-detail'>
-                     <Link to={`/product/${product.id}`}>
-                      <p>{product.name}</p>
-                      </Link>
+                <div className="products">
+                    {
+                        PRODUCTS.products.map(product => (
+                            <div className='product' key={product.key}>
+                                <Link to={`/product/${product.id}`}>
+                                    <img src={product.image} alt={product.name} />
+                                </Link>
 
-                      <p>{product.category},{product.author}</p>
-                      <p> <i class="fa fa-inr"></i>{product.price}<span><button>Add to Cart</button></span></p>
+                                <div className='card-detail'>
+                                    <Link to={`/product/${product.id}`}>
+                                        <p>{product.name}</p>
+                                    </Link>
 
-                    </div>
-
-                </div>))
-                }
+                                    <p>{product.category},{product.author}</p>
+                                    <p> <i class="fa fa-inr"></i>{product.price}<span><button onClick={(e) => handleAddToCart(e, product)}>Add to Cart</button></span></p>
+                                </div>
+                            </div>))
+                    }
+                </div>
             </div>
-        </div>
+            <Pagination/>
         </>
-        )
-    
+    )
+
 }
 
 export default HomeScreen;
