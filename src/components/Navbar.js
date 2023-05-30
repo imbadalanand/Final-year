@@ -43,6 +43,9 @@ const Navbar = () => {
                         <Link to="/Cart" ><i className="fa-solid fa-cart-shopping" style={{margin:"10px 10px", color: "white"}} ></i></Link>
                         <Link to="/Login" ><i className="fa-solid fa-user" style={{margin:"10px 10px", color: "white"}} ></i></Link>
                     </div>
+                    <div className='admin' style={{position:"absolute", top:"1px", right:"1px", border:"cover"}}>
+                        <Link to="/Admin">Admin</Link>
+                    </div>
                 </div>
             </nav>
         </>
