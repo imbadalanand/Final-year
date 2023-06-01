@@ -25,7 +25,7 @@ function App() {
       </header>
       <main>
         <Routes>
-          <Route path="/product/:id" element={<ProductScreen />} />
+          <Route path="/product/:productId" element={<ProductScreen />} />
           <Route path="/" element={<HomeScreen />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Signup" element={<Signup/>} />
