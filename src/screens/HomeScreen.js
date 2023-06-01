@@ -41,8 +41,8 @@ function HomeScreen() {
 
                 <div className="products">
                     {
-                        PRODUCTS.products.map(product => (
-                            <div className='product' key={product.key}>
+                        PRODUCTS.products.map.id(product => (
+                            <div className='product' key={product.id}>
                                 <Link to={`/product/${product.id}`}>
                                     <img src={product.image} alt={product.name} />
                                 </Link>
@@ -59,7 +59,7 @@ function HomeScreen() {
                     }
                 </div>
             </div>
-            <Pagination/>
+           
         </>
     )
 
