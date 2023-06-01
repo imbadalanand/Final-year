@@ -1,5 +1,4 @@
-export const PRODUCTS={
-    products: [
+export default [
         {
             name: 'Political Science',
             id: 1,
@@ -221,6 +220,3 @@ export const PRODUCTS={
             publisher: ""
         }
     ]
-}
-
-export default PRODUCTS;

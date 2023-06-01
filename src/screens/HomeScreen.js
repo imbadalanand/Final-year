@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import PRODUCTS from '../data';
+import data from '../data';
 import { useEffect, useState } from 'react';
 import Carousel from '../components/Carousel';
 import Pagination from '../components/Pagination';
@@ -41,8 +41,8 @@ function HomeScreen() {
 
                 <div className="products">
                     {
-                        PRODUCTS.products.map.id(product => (
-                            <div className='product' key={product.id}>
+                        data.map(product => (
+                            <div className='product' key={product.key}>
                                 <Link to={`/product/${product.id}`}>
                                     <img src={product.image} alt={product.name} />
                                 </Link>
@@ -59,7 +59,7 @@ function HomeScreen() {
                     }
                 </div>
             </div>
-           
+            <Pagination/>
         </>
     )
 

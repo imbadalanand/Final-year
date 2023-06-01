@@ -1,0 +1,13 @@
+{
+  "posts": [
+    {
+      "title": "testig",
+      "author": "typicodskdjjsadsae",
+      "id": 2
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

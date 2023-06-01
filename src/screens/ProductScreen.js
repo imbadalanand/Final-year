@@ -1,22 +1,25 @@
 import React from 'react';
-// import PRODUCTS from '../data';
-import {useParams} from "react-router-dom"
+import {useParams} from "react-router-dom";
+import data from '../data';
 
 
 
-function ProductScreen(props) {
-  const {id} = useParams();
-  console.log(id)
 
+ function ProductScreen() {
+   const {productId} = useParams();
+   console.log(productId,data);
 
-  return (
-  <div>
-     {id}
-  </div>
+   const thisProduct = data.find((prod) => prod.id == productId);
+   console.log(thisProduct);
   
+   
+   return (
+       <div>
+         <h1>{thisProduct.name}</h1>
+         <p>Price: ${thisProduct.price}</p>
+         <p>{thisProduct.description}</p> 
+       </div>
    )
- 
-
 }
 
 export default ProductScreen;
