@@ -10,7 +10,7 @@ export default [
             author:'Dr. Pukhraj Jain',
             rating: 4.0,
             numReviews: 10,
-            description:'Political Science Syllabus For B.A. Semester I of Lucknow University',
+            description:'Political Science Syllabus For B.A. Semester I of Lucknow University keke ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd',
             publisher:'Bharti Bhawan'
         },
         {
@@ -39,7 +39,7 @@ export default [
             rating: 4.0,
             numReviews: 3,
             description:'The ultimate history of the Blitz and bombing in the Second World War, from Wolfson Prize-winning historian and author Richard Overy The use of massive fleets of bombers to kill and terrorize civilians was an aspect of the Second World War which continues to challenge the idea that Allies specifically fought a moral war.',
-            publisher: "Prakash"
+            publisher: "Prakash Publication"
         },
         {
             name: 'India is My Dream',

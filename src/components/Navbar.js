@@ -23,11 +23,11 @@ const Navbar = () => {
                                 </Link>
                                 <ul className="dropdown-menu">
                                     <li><Link className="dropdown-item" to="#">Fiction</Link></li>
-                                    <li><Link className="dropdown-item" to="#">Patriotism</Link></li>
+                                    <li><Link className="dropdown-item" to="#">Science</Link></li>
                                     <li><Link className="dropdown-item" to="#">Religious</Link></li>
                                     <li><Link className="dropdown-item" to="#">Poetry</Link></li>
                                     <li><Link className="dropdown-item" to="#">Biography</Link></li>
-                                    <li><Link className="dropdown-item" to="#">Historical items</Link></li>
+                                    <li><Link className="dropdown-item" to="#">Finance</Link></li>
                                 </ul>
                             </li>
                             <li className="nav-item">

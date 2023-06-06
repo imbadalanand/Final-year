@@ -60,7 +60,7 @@ const Signup = () => {
                                                 <div className="form-check d-flex justify-content-center mb-5">
                                                     <input className="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
                                                     <label className="form-check-label" for="form2Example3">
-                                                        I agree all statements in <a href="#!">Terms of service</a>
+                                                        I agree all statements in <Link to="#">Terms of service</Link>
                                                     </label>
                                                 </div>
 
