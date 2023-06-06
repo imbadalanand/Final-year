@@ -24,10 +24,7 @@ main{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
- 
-
-
-  
+  box-sizing: border-box;  
 }
 
 .product{
@@ -84,11 +81,13 @@ color: black;
 }
 
 .card-detail button {
+  border: none;
     margin-left: 60px;
-    background-color: rgb(255 174 0);
+    background-color: #008CBA;
     color: white;
-    font-weight: 500;
-    font-palette: dark;
+    font-size: medium;
+    font-weight: 200;
+    border-radius: 5px;
 
 }
 .card-detail button :hover {
