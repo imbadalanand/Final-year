@@ -59,7 +59,7 @@ function HomeScreen() {
                     }
                 </div>
             </div>
-            <Pagination/>
+            <Pagination />
         </>
     )
 
