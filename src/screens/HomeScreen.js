@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Carousel from '../components/Carousel';
 import Pagination from '../components/Pagination';
 
+
 function HomeScreen() {
 
     const [cart, setCart] = useState([])
