@@ -46,7 +46,7 @@ const Signup = () => {
         let regobj = { id, name, password, email, phone, country, address, gender };
        
         //console.log(regobj);
-        fetch("http://localhost:5000/user", {
+        fetch("http://localhost:5000/users", {
             method: "POST",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(regobj)

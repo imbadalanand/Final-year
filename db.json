@@ -222,11 +222,18 @@
       "numReviews": 3,
       "description": "",
       "publisher": ""
-
-    } 
+    }
   ],
-  "users" : [
-
-    
+  "users": [
+    {
+      "id": "badal",
+      "name": "badal",
+      "password": "12345",
+      "email": "hascvhcs@gamai.com",
+      "phone": "95046951207",
+      "country": "india",
+      "address": "sarai",
+      "gender": "male"
+    }
   ]
 }
