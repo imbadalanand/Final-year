@@ -223,5 +223,13 @@
       "description": "",
       "publisher": ""
     } 
+  ],
+  "users" : [
+
+    {
+      "id": 16,
+      "password": "12345"
+
+    }
   ]
 }
