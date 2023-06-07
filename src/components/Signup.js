@@ -1,92 +1,161 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "./signup.css";
+
 
 const Signup = () => {
-    return (
-        <div>
-            <section className="" style={{ backgroundColor: "#eee" }}>
-                <div className="container h-100">
-                    <div className="row d-flex justify-content-center align-items-center h-100">
-                        <div className="col-lg-12 col-xl-11">
-                            <div className="card text-black" style={{ borderRadius: "25px" }}>
-                                <div className="card-body p-md-5">
-                                    <div className="row justify-content-center">
-                                        <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+    const[id, idchange]=useState("");
+    const[name, namechange]=useState("");
+    const[password, passwordchange]=useState("");
+    const[email, emailchange]=useState("");
+    const[gender, genderchange]=useState("");
+    const[address, addresschange]=useState("");
+    const[phone, phonechange]=useState("");
+    const[country, countrychange]=useState("india");
+    const usenavigate = useNavigate ();
 
-                                            <p className="text-center h3 fw-bold mb-2 mx-1 mx-md-4 mt-4">Create Your Account</p>
-                                            <br />
-                                            <form className="mx-1 mx-md-4">
+    const IsValidate = ()=>{
+        let isproceed=true;
+        let errormessage=' Please Enter the Value in';
+        if(id===null || id===''){
+            isproceed=false;
+            errormessage += ' Username';
+        }
+        if(name===null || name===''){
+          isproceed=false;
+          errormessage += ' Full Name';
+      }
+      if(password===null || password===''){
+        isproceed=false;
+        errormessage += ' Password';
+    }
+    if(email===null || email===''){
+      isproceed=false;
+      errormessage += ' Email';
+  }
+        if(!isproceed){
+            alert(errormessage)
+        }
+        return isproceed;
+    }
 
-                                                <div className="d-flex flex-row align-items-center mb-4">
-                                                    <i className="fas fa-user fa-lg me-3 fa-fw"></i>
-                                                    <div className="form-outline flex-fill mb-0">
-                                                        <input type="text" id="form3Example1c" className="form-control" placeholder='Name' />
-                                                        <label className="form-label" for="form3Example1c">Your Name</label>
-                                                    </div>
-                                                </div>
 
-                                                <div className="d-flex flex-row align-items-center mb-4">
-                                                    <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                                                    <div className="form-outline flex-fill mb-0">
-                                                        <input type="email" id="form3Example3c" className="form-control" placeholder='Email Address' />
-                                                        <label className="form-label" for="form3Example3c">Your Email</label>
-                                                    </div>
-                                                </div>
-
-                                                <div className="d-flex flex-row align-items-center mb-4">
-                                                    <i class="fas fa-solid fa-phone fa-lg me-3 fa-fw"></i>
-                                                    <div className="form-outline flex-fill mb-0">
-                                                        <input type="tel" id="phoneNumber" className="form-control" placeholder='Phone Number' />
-                                                        <label class="form-label" for="phoneNumber">Phone Number</label>
-                                                    </div>
-                                                </div>
-
-                                                <div className="d-flex flex-row align-items-center mb-4">
-                                                    <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
-                                                    <div className="form-outline flex-fill mb-0">
-                                                        <input type="password" id="form3Example4c" className="form-control" placeholder='Password' />
-                                                        <label className="form-label" for="form3Example4c">Password</label>
-                                                    </div>
-                                                </div>
-
-                                                <div className="d-flex flex-row align-items-center mb-4">
-                                                    <i className="fas fa-key fa-lg me-3 fa-fw"></i>
-                                                    <div className="form-outline flex-fill mb-0">
-                                                        <input type="password" id="form3Example4cd" className="form-control" placeholder='Confirm Password' />
-                                                        <label className="form-label" for="form3Example4cd">Repeat your password</label>
-                                                    </div>
-                                                </div>
-
-                                                <div className="form-check d-flex justify-content-center mb-5">
-                                                    <input className="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
-                                                    <label className="form-check-label" for="form2Example3">
-                                                        I agree all statements in <Link to="#">Terms of service</Link>
-                                                    </label>
-                                                </div>
-
-                                                <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                                    <button type="button" className="btn btn-primary btn-lg">Register</button>
-                                                </div>
-                                                <p className="text-center text-muted mt-5 mb-0">Have already an account? <Link to="/Login"
-                                                    className="fw-bold text-body"><u>Login here</u></Link></p>
-                                            </form>
-
-                                        </div>
-                                        <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-
-                                            <img src="https://parade.com/.image/t_share/MTkwNTgxMDM0NTM1MzY0NDc2/quotes-about-reading-books-5-1-jpg.jpg"
-                                                className="img-fluid" alt="Sample img" />
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    const handleSubmit = (e) => {
+        if (IsValidate()){
+        e.preventDefault();
+        let regobj = { id, name, password, email, phone, country, address, gender };
+       
+        //console.log(regobj);
+        fetch("http://localhost:5000/user", {
+            method: "POST",
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(regobj)
+        }).then((res) => {
+            alert('Registered successfully.');
+            usenavigate('/Login');
+           
+        }).catch((err) => {
+            alert('Failed :' + err.message);
+        });
+    }
+    }
+  return (
+    <div>
+      <div className="offset-lg-3 col-lg-6">
+        <form className="container" onSubmit={handleSubmit}>
+          <div className="card">
+            <div className="card-header">
+              <h1>User Registration</h1>
+            </div>
+            <div className="card-body">
+              <div className="row">
+                <div className="col-lg-6">
+                  <div className="form-group">
+                    <label>
+                      User Name <span className="errmsg">*</span>
+                    </label>
+                    <input value={id} onChange={e=>idchange(e.target.value)}className="form-control"></input>
+                  </div>
                 </div>
-            </section>
-        </div>
-    )
-}
 
-export default Signup
+                <div className="col-lg-6">
+                  <div className="form-group">
+                    <label>
+                      Password <span className="errmsg">*</span>
+                    </label>
+                    <input  value={password} onChange={e=>passwordchange(e.target.value)} type="password" className="form-control"></input>
+                  </div>
+                </div>
+
+                <div className="col-lg-6">
+                  <div className="form-group">
+                    <label>
+                      Full Name <span className="errmsg">*</span>
+                    </label>
+                    <input  value={name} onChange={e=>namechange(e.target.value)} className="form-control"></input>
+                  </div>
+                </div>
+
+                <div className="col-lg-6">
+                  <div className="form-group">
+                    <label>
+                      Email <span className="errmsg">*</span>
+                    </label>
+                    <input type="email" value={email} onChange={e=>emailchange(e.target.value)} className="form-control"></input>
+                  </div>
+                </div>
+
+                <div className="col-lg-6">
+                  <div className="form-group">
+                    <label>
+                      Phone No. <span className="errmsg">*</span>
+                    </label>
+                    <input value={phone} onChange={e=>phonechange(e.target.value)} className="form-control"></input>
+                  </div>
+                </div>
+
+                <div className="col-lg-6">
+                  <div className="form-group">
+                    <label>
+                      Country <span className="errmsg">*</span>
+                    </label>
+                    <select value={country} onChange={e=>countrychange(e.target.value)}className="form-control">
+                      <option value="india">India</option>
+                      <option value="nepal">Nepal</option>
+                      <option value="usa">USA</option>
+                      <option value="singapor">Singapore</option>
+                    </select>
+                  </div>
+                </div>
+                <div className="col-lg-6">
+                  <div className="form-group">
+                    <label>Address</label>
+                    <textarea value={address} onChange={e=>addresschange(e.target.value)} className="form-control"></textarea>
+                  </div>
+                </div>
+                <div className="col-lg-6">
+                  <div className="form-group">
+                    <label>Gender</label> <br></br>
+                    <input type="radio" checked={gender === 'male'} onChange={e=>genderchange(e.target.value)} name="gender" value="male" className="app-check"></input>
+                    <label>Male</label> <span></span>
+                    <input type="radio" checked={gender === 'female'} onChange={e=>genderchange(e.target.value)}name="gender" value="female" className="app-check"></input>
+                    <label>Female</label>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div className="card-footer">
+              <button type="submit" className="btn btn-primary">
+                Register
+              </button>
+              <Link to={'/Login'} className="btn btn-danger">Close</Link>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default Signup;

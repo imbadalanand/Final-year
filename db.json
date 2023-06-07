@@ -222,6 +222,78 @@
       "numReviews": 3,
       "description": "",
       "publisher": ""
-    } 
+    }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "name": "",
+      "password": "",
+      "gender": "",
+      "email": "",
+      "phone": "",
+      "address": "",
+      "country": "india"
+    },
+    {
+      "id": 2,
+      "name": "",
+      "password": "",
+      "gender": "",
+      "email": "",
+      "phone": "",
+      "address": "",
+      "country": "india"
+    },
+    {
+      "id": 3,
+      "name": "",
+      "password": "",
+      "gender": "",
+      "email": "",
+      "phone": "",
+      "address": "",
+      "country": "india"
+    },
+    {
+      "id": "badaldj101",
+      "name": "Badal Kumar",
+      "password": "95046",
+      "gender": "male",
+      "email": "abc@gmail.com",
+      "phone": "9504695107",
+      "address": "sarai vaishali",
+      "country": "india"
+    },
+    {
+      "id": "64166",
+      "name": "ASHCBHJSABH",
+      "password": "6666161",
+      "gender": "male",
+      "email": "SJXCBJAS@HABJ.COM",
+      "phone": "ASHCBHJASH",
+      "address": "SJNCJDSCJSDJC",
+      "country": "india"
+    },
+    {
+      "id": "lRfVer7",
+      "name": "",
+      "password": "",
+      "email": "",
+      "phone": "",
+      "country": "india",
+      "address": "",
+      "gender": ""
+    },
+    {
+      "id": "bag55",
+      "name": "scnscj ",
+      "password": "9504695107",
+      "email": "badal@gmail.com",
+      "phone": "9504695107",
+      "country": "india",
+      "address": "thkurinvjsd sarai",
+      "gender": "male"
+    }
   ]
 }
