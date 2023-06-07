@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [username, usernameupdate] = useState("");
+  const [id, idupdate] = useState("");
   const [password, passwordupdate] = useState("");
 
   const usenavigate=useNavigate()
@@ -12,7 +12,7 @@ const Login = () => {
     if(validate()){
       //implementation
       //console.log('proceed');
-      fetch("http://localhost:5000/users/"+username).then((res)=>{
+      fetch("http://localhost:5000/users/"+id).then((res)=>{
         return res.json();
       }).then((resp)=>{
         //console.log(resp)
@@ -36,7 +36,7 @@ const Login = () => {
   }
   const validate =()=>{
     let result=true;
-    if(username ==='' || username===null){
+    if(id ==='' || id===null){
       result=false;
       alert('Please Enter Username');
       
@@ -63,7 +63,7 @@ const Login = () => {
                 <label>
                   User Name <span className="errmsg">*</span>
                 </label>
-                <input value={username} onChange={e=>usernameupdate(e.target.value)} className="form-control"></input>
+                <input value={id} onChange={e=>idupdate(e.target.value)} className="form-control"></input>
               </div>
               <div className="form-group">
                 <label>Password <span className="errmsg">*</span></label>
