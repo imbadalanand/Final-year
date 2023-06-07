@@ -13,6 +13,7 @@ import Wishlist from "./components/Wishlist";
 import Admin from "./components/Admin";
 import Carousel from "./components/Carousel";
 import Pagination from "./components/Pagination";
+import Review from "./components/Review";
 
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
       </header>
       <main>
         <Routes>
-          <Route path="/product/:id" element={<ProductScreen />} />
+          <Route path="/product/:productId" element={<ProductScreen />} />
           <Route path="/" element={<HomeScreen />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Signup" element={<Signup/>} />
@@ -35,6 +36,10 @@ function App() {
           <Route path="/Admin" element={<Admin/>} />
           <Route path="/Carousel" element={<Carousel/>} />
           <Route path="/Pagination" element={<Pagination/>} />
+          <Route path="/Review" element={<Review/>} />
+          <Route path="/ProductScreen" element={<ProductScreen/>} />
+
+
 
 
         </Routes>       

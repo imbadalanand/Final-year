@@ -1,80 +1,83 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const [username, usernameupdate] = useState("");
+  const [password, passwordupdate] = useState("");
+
+  const usenavigate=useNavigate()
+
+  const ProceedLogin = (e) => {
+    e.preventDefault();
+    if(validate()){
+      //implementation
+      //console.log('proceed');
+      fetch("http://localhost:5000/users/"+username).then((res)=>{
+        return res.json();
+      }).then((resp)=>{
+        //console.log(resp)
+        if(Object.keys(resp).length===0){
+          alert('Please Enter valid username');
+        }else{
+          if (resp.password === password){
+            alert('Success');
+            usenavigate('/')
+
+          }else{
+            alert('Please Enter valid credentials');
+          }
+
+        }
+      }).catch((err)=>{
+        alert.error('Login Failed due to:'+err.message);
+      });
+
+    }
+  }
+  const validate =()=>{
+    let result=true;
+    if(username ==='' || username===null){
+      result=false;
+      alert('Please Enter Username');
+      
+    }
+    if(password ==='' || password===null){
+      result=false;
+      alert('Please Enter Password');
+     
+
+    }
+    return result;
+  }
+
   return (
-    <>
-      <section className="vh-100">
-        <div className="container-fluid h-custom">
-          <div className="row d-flex justify-content-center align-items-center h-100">
-            <div className="col-md-9 col-lg-6 col-xl-5">
-              <img src="https://images.squarespace-cdn.com/content/v1/54d8f3b4e4b04def03ef0878/1556104982134-6LUAOFH4OSYW1XBAAKVA/library%2520books.jpg"
-                className="img-fluid" alt="sample pic" />
+    <div className="row">
+      <div className="offset-lg-3 col-lg-6">
+        <form onSubmit={ProceedLogin} className="container">
+          <div className="card">
+            <div className="card-header">
+              <h1>User Login</h1>
             </div>
-            <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-              <form>
-                <div className="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-                  <p className="lead fw-normal mb-0 me-3">Login with</p>
-                  <button type="button" className="btn btn-primary btn-floating mx-1">
-                    <i className="fab fa-google"></i>
-                  </button>
-
-                  <button type="button" className="btn btn-primary btn-floating mx-1">
-                    <i className="fab fa-facebook-f"></i>
-                  </button>
-
-                  <button type="button" className="btn btn-primary btn-floating mx-1">
-                    <i className="fab fa-twitter"></i>
-                  </button>
-
-                  <button type="button" className="btn btn-primary btn-floating mx-1">
-                    <i className="fab fa-linkedin-in"></i>
-                  </button>
-                </div>
-
-                <div className="divider d-flex align-items-center my-4">
-                  <p className="text-center fw-bold mx-3 mb-0">Or</p>
-                </div>
-
-                {/* <!-- Email input --> */}
-                <div className="form-outline mb-4">
-                  <input type="email" id="form3Example3" className="form-control form-control-lg"
-                    placeholder="Enter a valid email address" />
-                  <label className="form-label" for="form3Example3">Email address</label>
-                </div>
-
-                {/* <!-- Password input --> */}
-                <div className="form-outline mb-3">
-                  <input type="password" id="form3Example4" className="form-control form-control-lg"
-                    placeholder="Enter password" />
-                  <label className="form-label" for="form3Example4">Password</label>
-                </div>
-
-                <div className="d-flex justify-content-between align-items-center">
-                  {/* <!-- Checkbox --> */}
-                  <div className="form-check mb-0">
-                    <input className="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
-                    <label className="form-check-label" for="form2Example3">
-                      Remember me
-                    </label>
-                  </div>
-                  <Link to="#!" className="text-body">Forgot password?</Link>
-                </div>
-
-                <div className="text-center text-lg-start mt-4 pt-2">
-                  <button type="button" className="btn btn-primary btn-lg">Login</button>
-                  <p className="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <Link to="/Signup"
-                    className="link-danger">Register</Link></p>
-                </div>
-
-              </form>
+            <div className="card-body">
+              <div className="form-group">
+                <label>
+                  User Name <span className="errmsg">*</span>
+                </label>
+                <input value={username} onChange={e=>usernameupdate(e.target.value)} className="form-control"></input>
+              </div>
+              <div className="form-group">
+                <label>Password <span className="errmsg">*</span></label>
+                <input type="password" value={password} onChange={e=>passwordupdate(e.target.value)} className="form-control"></input>
+              </div>
+            </div>
+            <div className="card-footer">
+              <button type="submit" className="btn btn-primary" >Login</button>
+              <Link className="btn btn-success" to={'/Signup'}>New User</Link>
             </div>
           </div>
-        </div>
-
-      </section>
-    </>
-  )
-}
-
+        </form>
+      </div>
+    </div>
+  );
+};
 export default Login;

@@ -24,21 +24,18 @@ main{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
- 
-
-
-  
+  box-sizing: border-box;  
 }
 
 .product{
-  border: 1px #cccce1 solid;
+  
   margin: 1rem;
   border-radius: 10px;
   cursor:pointer;
   width:250px;
   overflow: hidden;
   transition: transform .2s;
-  height: 310px;
+  height: 330px;
 }
 
 
@@ -48,7 +45,7 @@ main{
   border-radius: 8px;
   margin-left: 8px;
   margin-top: 8px;
-  width : 230px ;
+  width : 220px ;
   height: 200px;
   max-width: 400px;
 }
@@ -84,12 +81,20 @@ color: black;
 }
 
 .card-detail button {
-  margin-left: 80px;
-border-radius: 15px;
-background-color:rgb(28, 130, 255) ;
-color: wheat;
-font-weight:500;
+  border: none;
+    margin-left: 60px;
+    background-color: #008CBA;
+    color: white;
+    font-size: medium;
+    font-weight: 200;
+    border-radius: 5px;
+
 }
+.card-detail button :hover {
+  color: rgb(0, 0, 0);
+}
+
+
 h1{
   font-size: 26px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;

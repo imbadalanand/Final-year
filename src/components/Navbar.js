@@ -5,9 +5,10 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
     return (
         <>
+        
             <nav className="navbar navbar-expand-lg bg-secondary text-white">
                 <div className="container-fluid" style={{color:"white"}} >
-                    <img src="./images/logo.png" style={{width:"70px", height:"60px"}}alt="" />
+                    <img src="../images/logo.png" style={{width:"70px", height:"60px"}}alt="" />
                     <Link className="navbar-brand" to="/" style={{color:"white"}}>Refurbished Book Store</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -23,11 +24,11 @@ const Navbar = () => {
                                 </Link>
                                 <ul className="dropdown-menu">
                                     <li><Link className="dropdown-item" to="#">Fiction</Link></li>
-                                    <li><Link className="dropdown-item" to="#">Patriotism</Link></li>
+                                    <li><Link className="dropdown-item" to="#">Science</Link></li>
                                     <li><Link className="dropdown-item" to="#">Religious</Link></li>
                                     <li><Link className="dropdown-item" to="#">Poetry</Link></li>
                                     <li><Link className="dropdown-item" to="#">Biography</Link></li>
-                                    <li><Link className="dropdown-item" to="#">Historical items</Link></li>
+                                    <li><Link className="dropdown-item" to="#">Finance</Link></li>
                                 </ul>
                             </li>
                             <li className="nav-item">
