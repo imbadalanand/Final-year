@@ -1,4 +1,4 @@
-export default [
+const data = [
         {
             name: 'Political Science',
             id: 1,
@@ -220,3 +220,5 @@ export default [
             publisher: ""
         }
     ]
+
+    export default data

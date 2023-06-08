@@ -126,3 +126,40 @@ const Cart = () => {
 
 export default Cart
 
+// import React, { useContext } from 'react'
+// import data  from '../data';
+// import { useNavigate } from 'react-router-dom';
+
+//  export const Cart = () => {
+//   const { cartItems, getTotalCartAmount } = useContext();
+//   const totalAmount = getTotalCartAmount()
+//   const navigate = useNavigate()
+//   return (
+//     <div className='cart'>
+//       <div>
+//         <h1> Your Cart Items </h1>
+//       </div>
+//       <div className="cartItems">
+//         {data.map((product) => {
+//           if (cartItems[product.id] !==0) {
+//             return <Cart key={product.id} data={product} />;
+//           }
+//          })}
+//       </div>
+
+//          {totalAmount > 0? (
+//       <div className="checkout">
+//         <p>Subtotal: Rs.{totalAmount} INR</p>
+//         <button onClick={() => navigate("/")}>Continue Shopping</button>
+//         <button>Checkout</button>
+//       </div>
+//          ) : (
+//           <h1>Your Cart is Empty</h1>
+//          )}
+//     </div>
+//   )
+// };
+
+// export default Cart
+
+

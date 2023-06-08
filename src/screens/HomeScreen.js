@@ -3,6 +3,7 @@ import data from '../data';
 import { useEffect, useState } from 'react';
 import Carousel from '../components/Carousel';
 import Pagination from '../components/Pagination';
+import Category from '../components/Category';
 
 function HomeScreen() {
 
@@ -34,6 +35,7 @@ function HomeScreen() {
     return (
         <>
             <div>
+                <Category/>
                 <Carousel />
                 <hr />
                 <h1>Featured Books</h1>
