@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import data from '../data';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Carousel from '../components/Carousel';
 import Pagination from '../components/Pagination';
+import Category from '../components/Category';
 
 
 function HomeScreen() {
@@ -35,6 +36,7 @@ function HomeScreen() {
     return (
         <>
             <div>
+                <Category/>
                 <Carousel />
                 <hr />
                 <h1>Featured Books</h1>
@@ -67,3 +69,38 @@ function HomeScreen() {
 }
 
 export default HomeScreen;
+
+// const HomeScreen = () => {
+//     let isLoading = true;
+
+//     let API = "http://localhost:5000/products";
+
+//     const fetchApiData = async (url) => {
+//         try {
+//             const res = await fetch(url);
+//             const data = await res.json();
+//             console.log(data);
+//         } catch (error) {
+//             console.log(error);
+//         }
+//     };
+
+//     useEffect(() => {
+//         fetchApiData(API);
+//     }, []);
+
+//     if (isLoading) {
+//         return <>
+//             <h3>Loading...</h3>
+//         </>
+//     }
+//     return (
+//         <>
+//             <h3> Product is load</h3>
+
+//         </>
+
+//     );
+// };
+
+// export default HomeScreen
