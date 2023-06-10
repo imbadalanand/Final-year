@@ -9,6 +9,7 @@ function HomeScreen() {
 
     const [cart, setCart] = useState([])
     const [refresh, setRefresh] = useState(false)
+    const [searchTerm, setSearchTerm] = useState("");
 
     console.log(cart)
 
@@ -24,6 +25,16 @@ function HomeScreen() {
 
     }
 
+    const [products, setProducts] = useState([]);
+      
+    useEffect(() => {
+      fetch('http://localhost:5000/products')
+        .then(response => response.json())
+        .then(data => setProducts(data))
+        .catch(error => console.error(error));
+    }, []);
+
+
     useEffect(() => {
 
         if (cart.length > 0) {
@@ -32,6 +43,10 @@ function HomeScreen() {
 
     }, [refresh])
 
+
+
+      
+
     return (
         <>
             <div>
@@ -39,11 +54,12 @@ function HomeScreen() {
                 <hr />
                 <h1>Featured Books</h1>
                 <hr />
+                
 
+                
                 <div className="products">
-                    {
-                        data.map(product => (
-                            <div className='product' key={product.key}>
+                {products.map(product => (
+                            <div className='product' key={product.id}>
                                 <Link to={`/product/${product.id}`}>
                                     <img src={product.image} alt={product.name} />
                                 </Link>
@@ -56,8 +72,9 @@ function HomeScreen() {
                                     <p>{product.category},{product.author}</p>
                                     <p> <i class="fa fa-inr"></i>{product.price}<span><button onClick={(e) => handleAddToCart(e, product)}>Add to Cart</button></span></p>
                                 </div>
-                            </div>))
-                    }
+                            </div>
+                ))}
+                    
                 </div>
             </div>
             <Pagination />
