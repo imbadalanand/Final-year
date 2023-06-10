@@ -5,6 +5,7 @@ import Carousel from '../components/Carousel';
 import Pagination from '../components/Pagination';
 import Category from '../components/Category';
 
+
 function HomeScreen() {
 
     const [cart, setCart] = useState([])

@@ -20,6 +20,7 @@ import Category from "./components/Category";
 
 function App() {
   return (
+
       <Router>
 
         <div>
@@ -47,6 +48,7 @@ function App() {
         </div>
         <Footer />
       </Router>
+
 
 
   );
