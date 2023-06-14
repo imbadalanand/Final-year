@@ -14,10 +14,15 @@ import Admin from "./components/Admin";
 import Carousel from "./components/Carousel";
 import Pagination from "./components/Pagination";
 import Review from "./components/Review";
+import Search from "./components/Search";
+import { Link, useSearchParams } from "react-router-dom";
 
 
 function App() {
+  console.log(process.env);
   return (
+    
+    
     <Router>
    
     <div>
@@ -38,6 +43,9 @@ function App() {
           <Route path="/Pagination" element={<Pagination/>} />
           <Route path="/Review" element={<Review/>} />
           <Route path="/ProductScreen" element={<ProductScreen/>} />
+          <Route path="/Search/:searchid" element={<Search/>} />
+
+        
 
 
 

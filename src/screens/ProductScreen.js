@@ -1,6 +1,5 @@
-import React from 'react';
+import {React, useState, useEffect} from 'react';
 import { useParams } from "react-router-dom";
-import data from '../data';
 import './productscreen.css';
 import { Link } from 'react-router-dom';
 
@@ -8,18 +7,22 @@ import { Link } from 'react-router-dom';
 
 
 function ProductScreen() {
-   const { productId } = useParams();
-   console.log(productId, data);
+   const { productId } = useParams();  
+   const [thisProduct, setProducts] = useState([]);
+      
+   useEffect((props) => {
+     fetch(`http://localhost:5000/products/${productId}`)
+       .then(response => response.json())
+       .then(data => setProducts(data))
+       .catch(error => console.error(error));
+   }, []);
 
-   const thisProduct = data.find((prod) => prod.id == productId);
-   console.log(thisProduct);
-
-
+   
    return (
       <>
          <header style={{ display: "flex", justifyContent: "space-between" }} >
             <div className='continue-shopping' style={{ display: "flex" }} >
-               <Link to="/" ><i className="fa-solid fa-arrow-left" style={{ margin: "10px 10px", color: "black" }} ></i></Link>
+               <Link to="/product" ><i className="fa-solid fa-arrow-left" style={{ margin: "10px 10px", color: "black" }} ></i></Link>
                <h3>Continue Shopping</h3>
             </div>
             <div className='cart-icon'>
