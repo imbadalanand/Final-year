@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Link,useParams } from 'react-router-dom';
 
 import { useEffect, useState } from 'react';
@@ -6,6 +7,14 @@ import Pagination from '../components/Pagination';
 import axios from 'axios';
 
 
+=======
+import { Link } from 'react-router-dom';
+import data from '../data';
+import React, { useEffect, useState } from 'react';
+import Carousel from '../components/Carousel';
+import Pagination from '../components/Pagination';
+import Category from '../components/Category';
+>>>>>>> feef1bf058ced7deb05bb51856228a299bb21dba
 
 
 function HomeScreen() {
@@ -60,6 +69,7 @@ function HomeScreen() {
     return (
         <>
             <div>
+                <Category/>
                 <Carousel />
                 <hr />
                 <h1>Featured Books</h1>
@@ -95,4 +105,43 @@ function HomeScreen() {
 
 }
 
+<<<<<<< HEAD
 export default HomeScreen ;
+=======
+export default HomeScreen;
+
+// const HomeScreen = () => {
+//     let isLoading = true;
+
+//     let API = "http://localhost:5000/products";
+
+//     const fetchApiData = async (url) => {
+//         try {
+//             const res = await fetch(url);
+//             const data = await res.json();
+//             console.log(data);
+//         } catch (error) {
+//             console.log(error);
+//         }
+//     };
+
+//     useEffect(() => {
+//         fetchApiData(API);
+//     }, []);
+
+//     if (isLoading) {
+//         return <>
+//             <h3>Loading...</h3>
+//         </>
+//     }
+//     return (
+//         <>
+//             <h3> Product is load</h3>
+
+//         </>
+
+//     );
+// };
+
+// export default HomeScreen
+>>>>>>> feef1bf058ced7deb05bb51856228a299bb21dba
