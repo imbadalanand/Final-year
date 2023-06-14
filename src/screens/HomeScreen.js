@@ -1,9 +1,20 @@
+<<<<<<< HEAD
+import { Link,useParams } from 'react-router-dom';
+
+import { useEffect, useState } from 'react';
+import Carousel from '../components/Carousel';
+import Pagination from '../components/Pagination';
+import axios from 'axios';
+
+
+=======
 import { Link } from 'react-router-dom';
 import data from '../data';
 import React, { useEffect, useState } from 'react';
 import Carousel from '../components/Carousel';
 import Pagination from '../components/Pagination';
 import Category from '../components/Category';
+>>>>>>> feef1bf058ced7deb05bb51856228a299bb21dba
 
 
 function HomeScreen() {
@@ -27,13 +38,19 @@ function HomeScreen() {
     }
 
     const [products, setProducts] = useState([]);
+    const [records, setRecords] = useState([]);
+    const [search, setsearch] = useState('')
       
     useEffect(() => {
-      fetch('http://localhost:5000/products')
-        .then(response => response.json())
-        .then(data => setProducts(data))
+      axios.get('http://localhost:5000/products')
+        .then(res => {
+        setProducts(res.data)
+         setRecords(res.data)
+    })
         .catch(error => console.error(error));
     }, []);
+
+    
 
 
     useEffect(() => {
@@ -45,8 +62,9 @@ function HomeScreen() {
     }, [refresh])
 
 
-
-      
+    // const Filter = (event) => {
+    //     setRecords(products.filter(f => f.name.toLowercase().includes(event.target.value)))
+    // }
 
     return (
         <>
@@ -56,11 +74,13 @@ function HomeScreen() {
                 <hr />
                 <h1>Featured Books</h1>
                 <hr />
-                
-
+{/*                
+               <div>
+                <input type="text" className='form-control' onChange={Filter}></input>
+               </div> */}
                 
                 <div className="products">
-                {products.map(product => (
+                {records.map(product => (
                             <div className='product' key={product.id}>
                                 <Link to={`/product/${product.id}`}>
                                     <img src={product.image} alt={product.name} />
@@ -85,6 +105,9 @@ function HomeScreen() {
 
 }
 
+<<<<<<< HEAD
+export default HomeScreen ;
+=======
 export default HomeScreen;
 
 // const HomeScreen = () => {
@@ -121,3 +144,4 @@ export default HomeScreen;
 // };
 
 // export default HomeScreen
+>>>>>>> feef1bf058ced7deb05bb51856228a299bb21dba
