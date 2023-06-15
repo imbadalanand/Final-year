@@ -1,12 +1,12 @@
 import React, { createContext, useEffect, useReducer } from "react";
 import "./cart.css";
-import data  from "../data";
+import data  from "./data";
 import ContextCart from "./ContextCart";
-import { reducer } from "../redux/reducers/reducer";
+import { reducer } from "./redux/reducers/reducer";
 
 export const CartContext = createContext();
 
-const initialState = {
+  const initialState = {
   item: data,
   totalAmount: 0,
   totalItem: 0,
