@@ -1,20 +1,21 @@
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
 import Carousel from '../components/Carousel';
 import Pagination from '../components/Pagination';
-import { updateAllProduct } from "../redux/actions/action"
+import { updateAllProduct } from "../redux/actions/action";
+
+
 
 
 function HomeScreen() {
     const dispatch = useDispatch()
     const allProduct = useSelector((s) => s.cartReducer.allProduct)
     const filteredProduct = useSelector((s) => s.cartReducer.filteredProduct)
-
-
+    
     const [cart, setCart] = useState([])
     const [refresh, setRefresh] = useState(false)
-
+   
     console.log(cart)
 
     const handleAddToCart = (e, product) => {
@@ -29,13 +30,14 @@ function HomeScreen() {
 
     }
 
-      
     useEffect(() => {
       fetch('http://localhost:5000/products')
         .then(response => response.json())
         .then(data => dispatch(updateAllProduct(data)))
         .catch(error => console.error(error));
     }, []);
+
+    
 
 
     useEffect(() => {
@@ -56,6 +58,7 @@ function HomeScreen() {
             return allProduct
         }
     }
+
     return (
         <>
             <div>
@@ -63,8 +66,10 @@ function HomeScreen() {
                 <hr />
                 <h1>Featured Books</h1>
                 <hr />
+
                 <div className="products">
                 {getData().map(product => (
+
                             <div className='product' key={product.id}>
                                 <Link to={`/product/${product.id}`}>
                                     <img src={product.image} alt={product.name} />
@@ -88,5 +93,6 @@ function HomeScreen() {
     )
 
 }
+
 
 export default HomeScreen;
