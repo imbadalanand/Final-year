@@ -10,7 +10,7 @@ const data = [
             author:'Dr. Pukhraj Jain',
             rating: 4.0,
             numReviews: 10,
-            description:'Political Science Syllabus For B.A. Semester I of Lucknow University keke ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd',
+            description:'Political Science Syllabus For B.A. Semester I of Lucknow University ',
             publisher:'Bharti Bhawan'
         },
         {
@@ -113,7 +113,7 @@ const data = [
             name: "Life's Amazing Secret",
             id: 9,
             language:'English',
-            category: 'Devotional',
+            category: 'Religious',
             image:'/images/9.jpg',
             price: 310,
             countInStock: 3,

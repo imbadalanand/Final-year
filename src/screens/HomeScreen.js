@@ -1,28 +1,21 @@
-<<<<<<< HEAD
-import { Link,useParams } from 'react-router-dom';
-
-import { useEffect, useState } from 'react';
-import Carousel from '../components/Carousel';
-import Pagination from '../components/Pagination';
-import axios from 'axios';
-
-
-=======
-import { Link } from 'react-router-dom';
-import data from '../data';
+import { Link, useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
 import Carousel from '../components/Carousel';
 import Pagination from '../components/Pagination';
-import Category from '../components/Category';
->>>>>>> feef1bf058ced7deb05bb51856228a299bb21dba
+import { updateAllProduct } from "../redux/actions/action";
+
+
 
 
 function HomeScreen() {
-
+    const dispatch = useDispatch()
+    const allProduct = useSelector((s) => s.cartReducer.allProduct)
+    const filteredProduct = useSelector((s) => s.cartReducer.filteredProduct)
+    
     const [cart, setCart] = useState([])
     const [refresh, setRefresh] = useState(false)
-    const [searchTerm, setSearchTerm] = useState("");
-
+   
     console.log(cart)
 
     const handleAddToCart = (e, product) => {
@@ -37,16 +30,10 @@ function HomeScreen() {
 
     }
 
-    const [products, setProducts] = useState([]);
-    const [records, setRecords] = useState([]);
-    const [search, setsearch] = useState('')
-      
     useEffect(() => {
-      axios.get('http://localhost:5000/products')
-        .then(res => {
-        setProducts(res.data)
-         setRecords(res.data)
-    })
+      fetch('http://localhost:5000/products')
+        .then(response => response.json())
+        .then(data => dispatch(updateAllProduct(data)))
         .catch(error => console.error(error));
     }, []);
 
@@ -61,26 +48,28 @@ function HomeScreen() {
 
     }, [refresh])
 
-
-    // const Filter = (event) => {
-    //     setRecords(products.filter(f => f.name.toLowercase().includes(event.target.value)))
-    // }
+    console.log(allProduct);
+      
+    const getData = ()=>{
+        if(filteredProduct.length){
+            return filteredProduct
+        }
+        else{
+            return allProduct
+        }
+    }
 
     return (
         <>
             <div>
-                <Category/>
                 <Carousel />
                 <hr />
                 <h1>Featured Books</h1>
                 <hr />
-{/*                
-               <div>
-                <input type="text" className='form-control' onChange={Filter}></input>
-               </div> */}
-                
+
                 <div className="products">
-                {records.map(product => (
+                {getData().map(product => (
+
                             <div className='product' key={product.id}>
                                 <Link to={`/product/${product.id}`}>
                                     <img src={product.image} alt={product.name} />
@@ -105,43 +94,5 @@ function HomeScreen() {
 
 }
 
-<<<<<<< HEAD
-export default HomeScreen ;
-=======
+
 export default HomeScreen;
-
-// const HomeScreen = () => {
-//     let isLoading = true;
-
-//     let API = "http://localhost:5000/products";
-
-//     const fetchApiData = async (url) => {
-//         try {
-//             const res = await fetch(url);
-//             const data = await res.json();
-//             console.log(data);
-//         } catch (error) {
-//             console.log(error);
-//         }
-//     };
-
-//     useEffect(() => {
-//         fetchApiData(API);
-//     }, []);
-
-//     if (isLoading) {
-//         return <>
-//             <h3>Loading...</h3>
-//         </>
-//     }
-//     return (
-//         <>
-//             <h3> Product is load</h3>
-
-//         </>
-
-//     );
-// };
-
-// export default HomeScreen
->>>>>>> feef1bf058ced7deb05bb51856228a299bb21dba
