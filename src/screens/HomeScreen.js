@@ -1,16 +1,19 @@
 import { Link } from 'react-router-dom';
-import data from '../data';
+import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
 import Carousel from '../components/Carousel';
 import Pagination from '../components/Pagination';
-import Category from '../components/Category';
+import { updateAllProduct } from "../redux/actions/action"
 
 
 function HomeScreen() {
+    const dispatch = useDispatch()
+    const allProduct = useSelector((s) => s.cartReducer.allProduct)
+    const filteredProduct = useSelector((s) => s.cartReducer.filteredProduct)
+
 
     const [cart, setCart] = useState([])
     const [refresh, setRefresh] = useState(false)
-    const [searchTerm, setSearchTerm] = useState("");
 
     console.log(cart)
 
@@ -26,12 +29,11 @@ function HomeScreen() {
 
     }
 
-    const [products, setProducts] = useState([]);
       
     useEffect(() => {
       fetch('http://localhost:5000/products')
         .then(response => response.json())
-        .then(data => setProducts(data))
+        .then(data => dispatch(updateAllProduct(data)))
         .catch(error => console.error(error));
     }, []);
 
@@ -44,23 +46,25 @@ function HomeScreen() {
 
     }, [refresh])
 
-
-
+    console.log(allProduct);
       
-
+    const getData = ()=>{
+        if(filteredProduct.length){
+            return filteredProduct
+        }
+        else{
+            return allProduct
+        }
+    }
     return (
         <>
             <div>
-                <Category/>
                 <Carousel />
                 <hr />
                 <h1>Featured Books</h1>
                 <hr />
-                
-
-                
                 <div className="products">
-                {products.map(product => (
+                {getData().map(product => (
                             <div className='product' key={product.id}>
                                 <Link to={`/product/${product.id}`}>
                                     <img src={product.image} alt={product.name} />
@@ -86,38 +90,3 @@ function HomeScreen() {
 }
 
 export default HomeScreen;
-
-// const HomeScreen = () => {
-//     let isLoading = true;
-
-//     let API = "http://localhost:5000/products";
-
-//     const fetchApiData = async (url) => {
-//         try {
-//             const res = await fetch(url);
-//             const data = await res.json();
-//             console.log(data);
-//         } catch (error) {
-//             console.log(error);
-//         }
-//     };
-
-//     useEffect(() => {
-//         fetchApiData(API);
-//     }, []);
-
-//     if (isLoading) {
-//         return <>
-//             <h3>Loading...</h3>
-//         </>
-//     }
-//     return (
-//         <>
-//             <h3> Product is load</h3>
-
-//         </>
-
-//     );
-// };
-
-// export default HomeScreen

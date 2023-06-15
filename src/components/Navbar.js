@@ -1,25 +1,23 @@
 import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
-import data from "../data"
-import { useSelector } from 'react-redux';
+// import data from "../data"
+import { updateFilteredProduct } from "../redux/actions/action"
 
 const Navbar = () => {
+    const dispatch = useDispatch()
+    const allProduct = useSelector((s) => s.cartReducer.allProduct)
 
-    const getdata = useSelector((state) => state.cartReducer);
-    console.log(getdata);
-
-    const [category, setCategory] = useState(data);
     const filterResult = (catItem) => {
-        const result = data.filter((curData) => {
-            return curData.category===catItem;
+        const result = allProduct.filter((curData) => {
+            return curData.category === catItem;
         });
         console.log("result", result);
-        setCategory(result);
+        dispatch(updateFilteredProduct(result));
     }
     return (
         <>
-        <Link to={'/'}>Home</Link>
-        <Link to={'/login'}>Logout</Link>
+            <Link to={'/login'}>Logout</Link>
             <nav className="navbar navbar-expand-lg bg-secondary text-white">
                 <div className="container-fluid" style={{ color: "white" }} >
                     <img src="../images/logo.png" style={{ width: "70px", height: "60px" }} alt="" />
@@ -40,7 +38,7 @@ const Navbar = () => {
                                     <li><Link className="dropdown-item" onClick={() => filterResult("Fiction")}>Fiction</Link></li>
                                     <li><Link className="dropdown-item" onClick={() => filterResult("Science")}>Science</Link></li>
                                     <li><Link className="dropdown-item" onClick={() => filterResult("Religious")}>Religious</Link></li>
-                                    <li><Link className="dropdown-item" onClick={() => filterResult("Poetry")}>Poetry</Link></li>
+                                    <li><Link className="dropdown-item" onClick={() => filterResult("Romance")}>Romance</Link></li>
                                     <li><Link className="dropdown-item" onClick={() => filterResult("Biography")}>Biography</Link></li>
                                     <li><Link className="dropdown-item" onClick={() => filterResult("Finance")}>Finance</Link></li>
                                 </ul>
@@ -58,11 +56,12 @@ const Navbar = () => {
                         <Link to="/Cart" ><i className="fa-solid fa-cart-shopping" style={{ margin: "10px 10px", color: "white" }} ></i></Link>
                         <Link to="/Login" ><i className="fa-solid fa-user" style={{ margin: "10px 10px", color: "white" }} ></i></Link>
                     </div>
-                    <div className='admin' style={{ position: "absolute", top: "1px", right: "1px", border: "cover" }}>
-                        <Link to="/Admin">Admin</Link>
-                    </div>
+
                 </div>
             </nav>
+            <div className='admin' style={{ position: "absolute", top: "1px", right: "1px", border: "cover" }}>
+                <Link to="/AdminL">Admin</Link>
+            </div>
         </>
     )
 }

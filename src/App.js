@@ -10,11 +10,11 @@ import Contact from "./components/Contact"
 import Cart from "./components/Cart"
 import Footer from "./components/Footer"
 import Wishlist from "./components/Wishlist";
-import Admin from "./components/Admin";
+import AdminLogin from "./components/Admin/AdminLogin";
 import Carousel from "./components/Carousel";
 import Pagination from "./components/Pagination";
 import Review from "./components/Review";
-import Category from "./components/Category";
+import Admin from "./components/Admin/Admin";
 
 
 
@@ -36,12 +36,12 @@ function App() {
               <Route path="/Contact" element={<Contact />} />
               <Route path="/Cart" element={<Cart />} />
               <Route path="/Wishlist" element={<Wishlist />} />
+              <Route path="/AdminL" element={<AdminLogin />} />
               <Route path="/Admin" element={<Admin />} />
               <Route path="/Carousel" element={<Carousel />} />
               <Route path="/Pagination" element={<Pagination />} />
               <Route path="/Review" element={<Review />} />
               <Route path="/ProductScreen" element={<ProductScreen />} />
-              <Route path="/Category" element={<Category />} />
 
             </Routes>
           </main>
