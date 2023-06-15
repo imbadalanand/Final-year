@@ -19,8 +19,9 @@ const Login = () => {
         if(Object.keys(resp).length===0){
           alert('Please Enter valid username');
         }else{
-          if (resp.password === password){
+          if (resp.id === id && resp.password === password){
             alert('Success');
+
             usenavigate('/')
 
           }else{

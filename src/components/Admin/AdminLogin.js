@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Admin = () => {
+const AdminLogin = () => {
     return (
         <div>
             <section className="vh-100">
@@ -30,7 +30,7 @@ const Admin = () => {
                                     </div>
 
                                     <div className="pt-1 mb-4">
-                                        <button className="btn btn-info btn-lg btn-block" type="button">Login</button>
+                                        <Link to="/Admin"><button className="btn btn-info btn-lg btn-block" type="button">Login</button></Link>
                                     </div>
 
                                     <p className="small mb-5 pb-lg-2"><Link className="text-muted" to="#!">Forgot password?</Link></p>
@@ -52,4 +52,4 @@ const Admin = () => {
     )
 }
 
-export default Admin
+export default AdminLogin

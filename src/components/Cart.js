@@ -1,14 +1,13 @@
 import React, { createContext, useEffect, useReducer } from "react";
 import "./cart.css";
-
-import Product  from "./Product";
+import data  from "./data";
 import ContextCart from "./ContextCart";
-import { reducer } from "./reducer";
+import { reducer } from "./redux/reducers/reducer";
 
 export const CartContext = createContext();
 
-const initialState = {
-  item: Product,
+  const initialState = {
+  item: data,
   totalAmount: 0,
   totalItem: 0,
 };
