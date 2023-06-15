@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
     return (
         <>
-        <Link to={'/'}>Home</Link>
+        
         <Link to={'/login'}>Logout</Link>
             <nav className="navbar navbar-expand-lg bg-secondary text-white">
                 <div className="container-fluid" style={{color:"white"}} >
