@@ -15,7 +15,6 @@ import Pagination from "./components/Pagination";
 import Review from "./components/Review";
 import Admin from "./components/Admin/Admin";
 import Search from "./components/Search";
-import { Link, useSearchParams } from "react-router-dom";
 
 function App() {
   console.log(process.env);
