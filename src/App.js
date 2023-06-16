@@ -30,10 +30,12 @@ function App() {
       </header>
       <main>
         <Routes>
-          <Route path="/product/:productId" element={<ProductScreen />} />
+          
+         
           <Route path="/" element={<HomeScreen />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Signup" element={<Signup/>} />
+          <Route path="/product/:productId" element={<ProductScreen />} />
           <Route path="/Contact" element={<Contact/>} />
           <Route path="/Cart" element={<Cart/>} />
           <Route path="/AdminL" element={<AdminLogin />} />

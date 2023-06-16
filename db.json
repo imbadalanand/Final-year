@@ -234,6 +234,57 @@
       "country": "india",
       "address": "sarai",
       "gender": "male"
+    },
+    {
+
+      "id": "harshit",
+      "name": "Harshit Brand",
+      "password": "12345",
+      "email": "harshit@gmail.com",
+      "phone": "9966699666",
+      "country": "india",
+      "address": "KANKANRBAGH DON",
+      "gender" : "male"
+    },
+
+      "id": "hemant",
+      "name": "hemant raj",
+      "password": "12345",
+      "email": "hemant@gmail.com",
+      "phone": "77577556778",
+      "country": "india",
+      "address": "fjkjllkdcklfsdklsdj",
+      "gender": "male"
+    },
+    {
+      "id": "badal8",
+      "name": "badal",
+      "password": "gcfcf",
+      "email": "bbaah@gmail.com",
+      "phone": "9854324567",
+      "country": "india",
+      "address": "sarai, vaishali",
+      "gender": "male"
+    },
+    {
+      "id": "hemant1",
+      "name": "hemant raj",
+      "password": "1234",
+      "email": "hemant1@gmail.com",
+      "phone": "1234567890",
+      "country": "india",
+      "address": "shanccnmsnsj",
+      "gender": "male"
+    },
+    {
+      "id": "sujit1",
+      "name": "sujit kama",
+      "password": "1234",
+      "email": "sujit@12233",
+      "phone": "1234567890",
+      "country": "india",
+      "address": "bihffdghg",
+      "gender": "male"
     }
   ],
   "cart":[

@@ -1,15 +1,14 @@
 import React, { createContext, useEffect, useReducer } from "react";
 import "./cart.css";
-import data  from "../data";
+import data  from "./data";
 import ContextCart from "./ContextCart";
 import { reducer } from "../redux/reducers/reducer";
 // import { useDispatch } from "react-redux";
 // import { UpdatedCartProduct } from "../redux/actions/action"
 
-
 export const CartContext = createContext();
 
-const initialState = {
+  const initialState = {
   item: data,
   totalAmount: 0,
   totalItem: 0,
@@ -58,6 +57,7 @@ const Cart = () => {
   }, [state.item]);
 
   return (
+
     <CartContext.Provider
       value={{ ...state, removeItem, clearCart, increment, decrement }}
     >
@@ -67,3 +67,4 @@ const Cart = () => {
 };
 
 export default Cart ;
+
