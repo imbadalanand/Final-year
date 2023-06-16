@@ -9,7 +9,6 @@ import Signup from "./components/Signup"
 import Contact from "./components/Contact"
 import Cart from "./components/Cart"
 import Footer from "./components/Footer"
-import Wishlist from "./components/Wishlist";
 import AdminLogin from "./components/Admin/AdminLogin";
 import Carousel from "./components/Carousel";
 import Pagination from "./components/Pagination";
@@ -32,15 +31,16 @@ function App() {
       </header>
       <main>
         <Routes>
-          <Route path="/product/:productId" element={<ProductScreen />} />
+          
+         
           <Route path="/" element={<HomeScreen />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Signup" element={<Signup/>} />
+          <Route path="/product/:productId" element={<ProductScreen />} />
           <Route path="/Contact" element={<Contact/>} />
           <Route path="/Cart" element={<Cart/>} />
-          <Route path="/Wishlist" element={<Wishlist/>} />
           <Route path="/AdminL" element={<AdminLogin />} />
-              <Route path="/Admin" element={<Admin />} />
+          <Route path="/Admin" element={<Admin />} />
           <Route path="/Carousel" element={<Carousel/>} />
           <Route path="/Pagination" element={<Pagination/>} />
           <Route path="/Review" element={<Review/>} />

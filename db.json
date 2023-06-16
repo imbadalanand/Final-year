@@ -234,6 +234,16 @@
       "country": "india",
       "address": "sarai",
       "gender": "male"
+    },
+    {
+      "id": "harshit",
+      "name": "Harshit Brand",
+      "password": "12345",
+      "email": "harshit@gmail.com",
+      "phone": "9966699666",
+      "country": "india",
+      "address": "KANKANRBAGH DON",
+      "gender": "male"
     }
   ]
 }

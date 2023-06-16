@@ -15,15 +15,15 @@ const Login = () => {
       fetch("http://localhost:5000/users/"+id).then((res)=>{
         return res.json();
       }).then((resp)=>{
-        //console.log(resp)
+        console.log(resp)
         if(Object.keys(resp).length===0){
           alert('Please Enter valid username');
         }else{
           if (resp.id === id && resp.password === password){
             alert('Success');
-
+            localStorage.setItem("user", JSON.stringify(resp));
+            localStorage.setItem("loggedin", true);
             usenavigate('/')
-
           }else{
             alert('Please Enter valid credentials');
           }
