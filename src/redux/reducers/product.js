@@ -1,4 +1,5 @@
 const INIT_STATE = {
+    Cart: [],
     allProduct: [],
     filteredProduct: []
 };
@@ -17,6 +18,11 @@ export const cartReducer = (state = INIT_STATE, action) => {
                 ...state,
                 allProduct: [...action.payload]
             }
+            case "UPADATED_CART_SECTION":
+                return {
+                    ...state,
+                    cart: [...action.payload]
+                }
         default:
             return state
     }

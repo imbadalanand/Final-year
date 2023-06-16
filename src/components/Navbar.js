@@ -1,8 +1,7 @@
 
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
-// import data from "../data"
 import { updateFilteredProduct } from "../redux/actions/action"
 
 const Navbar = () => {
@@ -17,8 +16,6 @@ const Navbar = () => {
         dispatch(updateFilteredProduct(result));
     }
     
-  const [searchid, searchupdate] = useState("");
-
 
     return (
         <>
@@ -40,6 +37,7 @@ const Navbar = () => {
                                     Feature Books
                                 </Link>
                                 <ul className="dropdown-menu">
+                                    <li><Link className="dropdown-item" onClick={() => filterResult("UPDATE_ALL_PRODUCT")}>All Books</Link></li>
                                     <li><Link className="dropdown-item" onClick={() => filterResult("Fiction")}>Fiction</Link></li>
                                     <li><Link className="dropdown-item" onClick={() => filterResult("Science")}>Science</Link></li>
                                     <li><Link className="dropdown-item" onClick={() => filterResult("Religious")}>Religious</Link></li>
@@ -57,7 +55,6 @@ const Navbar = () => {
                             <button className="btn btn-light" type="submit">Search</button>
                         </form>
                         {/* <Link to="#"><i className="fa-solid fa-bell" style={{margin:"10px 10px", color: "white"}} ></i></Link> */}
-                        <Link to="/Wishlist"><i className="fa-regular fa-heart" style={{ margin: "10px 10px", color: "white" }} ></i></Link>
                         <Link to="/Cart" ><i className="fa-solid fa-cart-shopping" style={{ margin: "10px 10px", color: "white" }} ></i></Link>
                         <Link to="/Login" ><i className="fa-solid fa-user" style={{ margin: "10px 10px", color: "white" }} ></i></Link>
                     </div>

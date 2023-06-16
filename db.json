@@ -235,5 +235,10 @@
       "address": "sarai",
       "gender": "male"
     }
+  ],
+  "cart":[
+    {
+      
+    }
   ]
 }

@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Wishlist = () => {
+const Order = () => {
   return (
     <div>
-      Wishlist
+      
     </div>
   )
 }
 
-export default Wishlist
+export default Order

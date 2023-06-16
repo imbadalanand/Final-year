@@ -3,6 +3,9 @@ import "./cart.css";
 import data  from "../data";
 import ContextCart from "./ContextCart";
 import { reducer } from "../redux/reducers/reducer";
+// import { useDispatch } from "react-redux";
+// import { UpdatedCartProduct } from "../redux/actions/action"
+
 
 export const CartContext = createContext();
 
@@ -15,6 +18,7 @@ const initialState = {
 const Cart = () => {
   // const [item, setItems] = useState(Product);
   const [state, dispatch] = useReducer(reducer, initialState);
+
 
   //to delete the items from cart
 
