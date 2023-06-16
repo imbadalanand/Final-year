@@ -54,6 +54,7 @@ const Cart = () => {
   }, [state.item]);
 
   return (
+
     <CartContext.Provider
       value={{ ...state, removeItem, clearCart, increment, decrement }}
     >
@@ -63,3 +64,4 @@ const Cart = () => {
 };
 
 export default Cart ;
+
