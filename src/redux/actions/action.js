@@ -18,3 +18,10 @@ export const updateAllProduct = (data) => {
         payload:data
     }
 }
+
+export const UpdatedCartProduct = (data) => {
+    return{
+        type:"UPADATED_CART_SECTION",
+        payload:data
+    }
+}

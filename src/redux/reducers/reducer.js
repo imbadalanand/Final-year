@@ -1,3 +1,10 @@
+// const INIT_STATE = {
+//   RemoveItem: [],
+//   ClearCart: [],
+//   Increment:[],
+//   Decrement:[]
+// };
+
 export const reducer = (state, action) => {
   if (action.type === "REMOVE_ITEM") {
     return {
