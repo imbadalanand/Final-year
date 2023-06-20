@@ -11,7 +11,7 @@ export const reducer = (state, action) => {
   if (action.type === "CLEAR_CART") {
     return { ...state, item: [] };
   }
-
+ 
   if (action.type === "INCREMENT") {
     const updatedCart = state.item.map((curElem) => {
       if (curElem.id === action.payload) {
