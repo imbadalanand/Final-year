@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
-import { CartContext } from './Cart';
-import { useDispatch, useSelector } from "react-redux";
+import React from 'react';
+import { useDispatch } from "react-redux";
 import { removeItem, increment, decrement } from "../redux/actions/cart";
 
 const Items = ({ id, name, image, price, author, quantity}) => {

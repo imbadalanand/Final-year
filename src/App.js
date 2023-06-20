@@ -23,6 +23,7 @@ import Product from "./components/Admin/Product/Product";
 import ProductCreate from "./components/Admin/Product/ProductCreate";
 import ProductDetails from "./components/Admin/Product/ProductDetails";
 import ProductEdit from "./components/Admin/Product/ProductEdit";
+import Order from "./components/Admin/Order/Order";
 
 function App() {
   console.log(process.env);
@@ -61,6 +62,7 @@ function App() {
           <Route path="/product/create" element={<ProductCreate/>} />
           <Route path="/product/detail/:productid" element={<ProductDetails/>} />
           <Route path="/product/edit/:productid" element={<ProductEdit/>} />
+          <Route path="/Order" element={<Order/>} />
 
             </Routes>
           </main>
