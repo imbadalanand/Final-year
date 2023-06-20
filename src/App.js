@@ -15,6 +15,14 @@ import Pagination from "./components/Pagination";
 import Review from "./components/Review";
 import Admin from "./components/Admin/Admin";
 import Search from "./components/Search";
+import User from "./components/Admin/User/User";
+import UserCreate from "./components/Admin/User/UserCreate";
+import UserDetail from "./components/Admin/User/UserDetail";
+import UserEdit from "./components/Admin/User/UserEdit";
+import Product from "./components/Admin/Product/Product";
+import ProductCreate from "./components/Admin/Product/ProductCreate";
+import ProductDetails from "./components/Admin/Product/ProductDetails";
+import ProductEdit from "./components/Admin/Product/ProductEdit";
 
 function App() {
   console.log(process.env);
@@ -45,7 +53,14 @@ function App() {
           <Route path="/Review" element={<Review/>} />
           <Route path="/ProductScreen" element={<ProductScreen/>} />
           <Route path="/Search/:searchid" element={<Search/>} />
-
+          <Route path="/User" element={<User/>} />
+          <Route path="/user/create" element={<UserCreate/>} />
+          <Route path="/user/detail/:userid" element={<UserDetail/>} />
+          <Route path="/user/edit/:userid" element={<UserEdit/>} />
+          <Route path="/Product" element={<Product/>} />
+          <Route path="/product/create" element={<ProductCreate/>} />
+          <Route path="/product/detail/:productid" element={<ProductDetails/>} />
+          <Route path="/product/edit/:productid" element={<ProductEdit/>} />
 
             </Routes>
           </main>

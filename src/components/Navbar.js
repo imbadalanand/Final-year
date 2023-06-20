@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-
 import { updateFilteredProduct } from "../redux/actions/action";
 import Login from "./Login";
 import { Nav, NavDropdown } from "react-bootstrap";
+
 
 const Navbar = () => {
     
@@ -24,10 +24,6 @@ const Navbar = () => {
 
 
   const userInfo = JSON.parse(localStorage.getItem("user"));
-  
-  
-
-  
 
   const handleLogout = () => {
     localStorage.removeItem("loggedin");

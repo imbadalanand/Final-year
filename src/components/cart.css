@@ -32,31 +32,36 @@
     justify-content: flex-end;
   }  
 .cart-icon img {
-    width: 3rem;
-    height: 3rem;
+    width: 2rem;
+    height: 2rem;
     
   }
 .cart-icon p {
     position: absolute;
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     right: -1.2rem;
     top: -1rem;
     border-radius: 50%;
     background: #99cbf7;
     color: #fff;
     box-sizing: border-box;
-    font-size: 1.6rem;
+    font-size: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--main-color);
   }
 
+  .main-cart-section {
+  height: 100%;
+  width: 100%;
+  }
+
 .main-cart-section h1 {
     font-style: normal;
     font-weight: bold;
-    font-size: 3rem;
+    font-size: 2rem;
     text-transform: capitalize;
     color: rgba(41, 41, 41, 1);
     margin-bottom: 1rem;
@@ -64,7 +69,7 @@
 .main-cart-section .total-items {
     font-style: normal;
     font-weight: normal;
-    font-size: 1.8rem;
+    font-size: 25px;
     text-transform: capitalize;
     color: var(--main-color);
     margin-bottom: 5rem;
@@ -126,17 +131,19 @@
 .items-info .title h2 {
     font-style: normal;
     font-weight: bold;
-    font-size: 2.2rem;
+    font-size: 25px;
     display: flex;
     align-items: center;
     text-transform: capitalize;
     color: var(--main-color);
+    margin-left: 15px;
   }
   
 .items-info .title p {
     font-style: normal;
     font-weight: normal;
-    font-size: 1.8rem;
+    margin-left: 15px;
+    font-size: 20px;
     display: flex;
     align-items: center;
     text-transform: capitalize;
@@ -164,7 +171,7 @@
     box-sizing: border-box;
     font-style: normal;
     font-weight: normal;
-    font-size: 1.6rem;
+    font-size: 20px;
     text-align: center;
     text-transform: capitalize;
     color: var(--primary-color);
@@ -187,7 +194,7 @@
 .price h3 {
     font-style: normal;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 20px;
     text-transform: capitalize;
     color: var(--main-color);
   }
@@ -212,7 +219,7 @@
   
 .card-total h3 {
     font-style: 200;
-    font-size: 2.58rem;
+    font-size: 25px;
     line-height: 3.2rem;
     text-transform: capitalize;
     color: #606166;
@@ -221,7 +228,7 @@
 .card-total h3 span {
     font-style: normal;
     font-weight: bold;
-    font-size: 2.8rem;
+    font-size: 30px;
     line-height: 3.2rem;
     text-transform: capitalize;
     color: #000000;
@@ -230,8 +237,8 @@
   
 .card-total button {
     border: none;
-    font-size: 1.6rem;
-    padding: 1rem 3rem;
+    font-size: 20px;
+    padding: 0.5rem 1rem;
     color: #fff;
     background-color: #349bf3;
     text-transform: uppercase;
