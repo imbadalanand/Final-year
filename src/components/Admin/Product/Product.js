@@ -49,7 +49,7 @@ const Product = () => {
         <div className='card-body'>
           <table className="table table-bordered">
             <thead className="bg-dark text-white">
-              <tr>
+              <tr className="text-center">
                 <td>ID</td>
                 <td>Book Name</td>
                 <td>Language</td>
@@ -59,6 +59,7 @@ const Product = () => {
                 <td>Ratings</td>
                 <td>Description</td>
                 <td>Publisher</td>
+                <td>Action</td>
 
               </tr>
             </thead>
