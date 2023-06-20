@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { updateFilteredProduct } from "../redux/actions/action";
-import Login from "./Login";
+//import Login from "./Login";
 import { Nav, NavDropdown } from "react-bootstrap";
 
 
@@ -153,7 +153,7 @@ const Navbar = () => {
         </div>
       </nav>
       <div className="admin" style={{ position: "absolute", top: "1px", right: "1px", border: "cover" }}>
-        {/* <Link to="/AdminL">Admin</Link> */}
+        <Link to="/AdminL">Admin</Link> 
       </div>
     </>
   );
