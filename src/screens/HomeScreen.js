@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Carousel from '../components/Carousel';
 import Pagination from '../components/Pagination';
 import { updateAllProduct } from "../redux/actions/action";
-
+import { addToCart } from "../redux/actions/cart";
 
 
 
@@ -23,7 +23,8 @@ function HomeScreen() {
         console.log(e)
         console.log(product)
 
-        setCart((prev) => [...prev, product])
+        // setCart((prev) => [...prev, product])
+        dispatch(addToCart(product))
         setRefresh(!refresh)
         // setCart([...cart , product ])
         // setCart([product])
