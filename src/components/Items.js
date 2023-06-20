@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import { CartContext } from './Cart';
+import { useDispatch, useSelector } from "react-redux";
+import { removeItem, increment, decrement } from "../redux/actions/cart";
 
 const Items = ({ id, name, image, price, author, quantity}) => {
-   
-  const { removeItem, increment, decrement } = useContext(CartContext);
+  const dispatch = useDispatch()
+
   
   return (
     <>
@@ -18,9 +20,9 @@ const Items = ({ id, name, image, price, author, quantity}) => {
             </div>
 
             <div className='add-minus-quantity'>
-              <i className='fas fa-minus minus'onClick={()=> decrement(id)}></i>
+              <i className='fas fa-minus minus'onClick={()=> dispatch(decrement(id))}></i>
               <input type="text" placeholder={quantity}/>
-              <i className='fas fa-plus add ' onClick={()=> increment(id)}></i>
+              <i className='fas fa-plus add ' onClick={()=> dispatch(increment(id))}></i>
               </div>
 
               <div className='price'>
@@ -28,7 +30,7 @@ const Items = ({ id, name, image, price, author, quantity}) => {
               </div>
 
               <div className='remove-item'>
-              <i className='fas fa-trash-alt remove'onClick={() =>removeItem(id)}></i>
+              <i className='fas fa-trash-alt remove'onClick={() =>dispatch(removeItem(id))}></i>
 
               </div>
 

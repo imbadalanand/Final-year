@@ -12,7 +12,7 @@ const Admin = () => {
                         <div className="card-body">
                             <p className=" text-center">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         </div>
-                        <Link to="#" className="btn btn-primary">Go to User Sction</Link>
+                        <Link to="/User" className="btn btn-primary" >Go to User Sction</Link>
                     </div>
                 </div>
                 <div className="col">
@@ -22,7 +22,7 @@ const Admin = () => {
                         <div className="card-body">
                             <p className="text-center">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         </div>
-                        <Link to="#" className="btn btn-primary center">Go to Product Sction</Link>
+                        <Link to="/Product" className="btn btn-primary center">Go to Product Sction</Link>
                     </div>
                 </div>
                 <div className="col">
@@ -32,7 +32,7 @@ const Admin = () => {
                         <div className="card-body">
                             <p className="text-center">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         </div>
-                        <Link to="#" className="btn btn-primary">Go to Order Sction</Link>
+                        <Link to="/Order" className="btn btn-primary">Go to Order Sction</Link>
                     </div>
                 </div>
             </div>
