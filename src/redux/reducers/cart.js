@@ -25,7 +25,7 @@ export const cart = (state=INIT_STATE, action) => {
   if (action.type === "CLEAR_CART") {
     return { ...state, cart: [] };
   }
-
+ 
   if (action.type === "INCREMENT") {
     const updatedCart = state.cart.map((curElem) => {
       if (curElem.id === action.payload) {
