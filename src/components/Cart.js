@@ -1,9 +1,8 @@
-import React, { createContext, useEffect, useReducer } from "react";
+import React, { createContext, useEffect } from "react";
 import "./cart.css";
 import { useDispatch, useSelector } from "react-redux";
-import data from "../data";
 import ContextCart from "./ContextCart";
-import { reducer } from "../redux/reducers/cart";
+// import { reducer } from "../redux/reducers/cart";
 
 // import { useDispatch } from "react-redux";
 // import { UpdatedCartProduct } from "../redux/actions/action"

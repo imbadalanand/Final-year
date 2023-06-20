@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 import Items from "./Items";
-import { CartContext } from "./Cart";
+// import { CartContext } from "./Cart";
 import { Link } from "react-router-dom";
 
 const ContextCart = (props) => {
@@ -10,10 +10,10 @@ const ContextCart = (props) => {
     return (
       <>
         <header>
-          <Link to="/ProductScreen"><div className="continue-shopping">
-            <img src="/images/arrow1.png" alt="arrow" className="arrow-icon" />
+          <Link className="continue-shopping" to="/">
+            <img src="/images/arrow1.png" alt="arrow" className="arrow-icon" /></Link>
             <h3>continue shopping</h3>
-          </div></Link>
+          
           <div className="cart-icon">
             <img src="./images/cart.jpg" alt="cart" />
             <p>0</p>

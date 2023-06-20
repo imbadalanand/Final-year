@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { updateFilteredProduct } from "../redux/actions/action";
-//import Login from "./Login";
+import { updateFilteredProduct } from "../redux/actions/product";
+import Login from "./Login";
 import { Nav, NavDropdown } from "react-bootstrap";
 
 
@@ -68,6 +68,11 @@ const Navbar = () => {
                   Feature Books
                 </Link>
                 <ul className="dropdown-menu">
+                <li>
+                    <Link className="dropdown-item" onClick={() => filterResult("UPDATE_ALL_PRODUCT")}>
+                      All Books
+                    </Link>
+                  </li>
                   <li>
                     <Link className="dropdown-item" onClick={() => filterResult("Fiction")}>
                       Fiction
