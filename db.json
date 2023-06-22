@@ -312,10 +312,61 @@
       "rating": "5",
       "description": "Oswaal CBSE Chapterwise & Topicwise Question Bank Class 10 Science Book",
       "publisher": "Oswaal Books and Learning Private Limited"
+    },
+    {
+      "id": 24,
+      "name": "CBSE All In One Social Science",
+      "language": "English",
+      "category": "Science",
+      "image": "/images/25.jpg",
+      "price": "300",
+      "quantity": "1",
+      "author": "Madhumita Pattrea",
+      "rating": "4",
+      "description": "CBSE All In One Social Science",
+      "publisher": "Arihant Publications"
+    },
+    {
+      "id": 25,
+      "name": "National Science Olympiad",
+      "language": "English",
+      "category": "Science",
+      "image": "/images/26.jpg",
+      "price": "165",
+      "quantity": "1",
+      "author": "Anil Ahlawat",
+      "rating": "5",
+      "description": "National Science Olympiad (NSO) Work Book for Class 8 - Quick Recap, MCQs, Previous Years Solved Paper and Achievers Section",
+      "publisher": "Mtg Learning Media Pvt Ltd"
+    },
+    {
+      "id": 26,
+      "name": "NCERT Examplar Science ",
+      "language": "English",
+      "category": "Science",
+      "image": "/images/27.jpg",
+      "price": "230",
+      "quantity": "1",
+      "author": "Indu Gupta, Rajesh Singh, Sikha Sharma",
+      "rating": "4",
+      "description": "NCERT Exemplar Science Problems - Solutions (Class 10) is a comprehensive book for students of standard X studying in schools affiliated to the Central Board of Secondary Education. The book comprises chapters on chemical reactions and equations, acids, bases and salts, metals and non-metals, life processes, human eye and colorful world, electricity and the environment. In addition, the book consists of several solved examples for thorough revision and final practice. This book is essential for students preparing for their board examinations.",
+      "publisher": " Arihant Publishers"
     }
   ],
   "users": [
     {
+
+      "id": "badal",
+      "name": "badal",
+      "password": "12345",
+      "email": "hascvhcs@gamai.com",
+      "phone": "95046951207",
+      "country": "india",
+      "address": "sarai",
+      "gender": "male"
+    },
+    {
+
       "id": "hemant",
       "name": "Hemant Raj",
       "password": "12345",
@@ -345,11 +396,36 @@
       "gender": "male"
     },
     {
-      "name": "Hemant Raj",
-      "email": "hemantraj202@gmail.com",
-      "phone": "07004493428",
-      "active": true,
-      "id": "cMwXrdS"
+      "id": "sujit1",
+      "name": "sujit kama",
+      "password": "1234",
+      "email": "sujit@12233",
+      "phone": "1234567890",
+      "country": "india",
+      "address": "bihffdghg",
+      "gender": "male"
+    }
+  ],
+  "admin": [
+    {
+      "id": "sujit1",
+      "name": "Admin Sujit",
+      "password": "1234",
+      "email": "sujit@12233",
+      "phone": "1234567890",
+      "country": "india",
+      "address": "bihffdghg",
+      "gender": "male"
+    },
+    {
+      "id": "hemant",
+      "name": "Admin hemant",
+      "password": "12345",
+      "email": "hemant@gmail.com",
+      "phone": "7004493428",
+      "country": "india",
+      "address": "bihffhuh",
+      "gender": "male"
     },
     {
       "id": "harshit",
@@ -366,12 +442,7 @@
     {}
   ],
   "orders": [
-    {}
-  ],
-  "admin": [
     {
-      "id": "hemant",
-      "password": "12345"
     }
   ],
   "review":[
