@@ -355,11 +355,23 @@
   ],
   "users": [
     {
+
+      "id": "badal",
+      "name": "badal",
+      "password": "12345",
+      "email": "hascvhcs@gamai.com",
+      "phone": "95046951207",
+      "country": "india",
+      "address": "sarai",
+      "gender": "male"
+    },
+    {
+
       "id": "hemant",
-      "name": "hemant raj",
+      "name": "Hemant Raj",
       "password": "12345",
       "email": "hemant@gmail.com",
-      "phone": "77577556778",
+      "phone": "7004493428",
       "country": "india",
       "address": "fjkjllkdcklfsdklsdj",
       "gender": "male"
@@ -384,11 +396,36 @@
       "gender": "male"
     },
     {
-      "name": "Hemant Raj",
-      "email": "hemantraj202@gmail.com",
-      "phone": "07004493428",
-      "active": true,
-      "id": "cMwXrdS"
+      "id": "sujit1",
+      "name": "sujit kama",
+      "password": "1234",
+      "email": "sujit@12233",
+      "phone": "1234567890",
+      "country": "india",
+      "address": "bihffdghg",
+      "gender": "male"
+    }
+  ],
+  "admin": [
+    {
+      "id": "sujit1",
+      "name": "Admin Sujit",
+      "password": "1234",
+      "email": "sujit@12233",
+      "phone": "1234567890",
+      "country": "india",
+      "address": "bihffdghg",
+      "gender": "male"
+    },
+    {
+      "id": "hemant",
+      "name": "Admin hemant",
+      "password": "12345",
+      "email": "hemant@gmail.com",
+      "phone": "7004493428",
+      "country": "india",
+      "address": "bihffhuh",
+      "gender": "male"
     },
     {
       "id": "harshit",
@@ -405,6 +442,7 @@
     {}
   ],
   "orders": [
-    {}
+    {
+    }
   ]
 }
