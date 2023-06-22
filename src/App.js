@@ -11,7 +11,6 @@ import Cart from "./components/Cart"
 import Footer from "./components/Footer"
 import AdminLogin from "./components/Admin/AdminLogin";
 import Carousel from "./components/Carousel";
-import Pagination from "./components/Pagination";
 import Review from "./components/Review";
 import Admin from "./components/Admin/Admin";
 import Search from "./components/Search";
@@ -24,6 +23,7 @@ import ProductCreate from "./components/Admin/Product/ProductCreate";
 import ProductDetails from "./components/Admin/Product/ProductDetails";
 import ProductEdit from "./components/Admin/Product/ProductEdit";
 import Order from "./components/Admin/Order/Order";
+import OrderDetail from "./components/Admin/Order/OrderDetail";
 
 function App() {
   console.log(process.env);
@@ -50,7 +50,6 @@ function App() {
           <Route path="/AdminL" element={<AdminLogin />} />
           <Route path="/Admin" element={<Admin />} />
           <Route path="/Carousel" element={<Carousel/>} />
-          <Route path="/Pagination" element={<Pagination/>} />
           <Route path="/Review" element={<Review/>} />
           <Route path="/ProductScreen" element={<ProductScreen/>} />
           <Route path="/Search/:searchid" element={<Search/>} />
@@ -63,6 +62,8 @@ function App() {
           <Route path="/product/detail/:productid" element={<ProductDetails/>} />
           <Route path="/product/edit/:productid" element={<ProductEdit/>} />
           <Route path="/Order" element={<Order/>} />
+          <Route path="/order/detail/:orderid" element={<OrderDetail/>} />
+
 
             </Routes>
           </main>

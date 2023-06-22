@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { updateFilteredProduct } from "../redux/actions/product";
-import Login from "./Login";
-import { Nav, NavDropdown } from "react-bootstrap";
+// import Login from "./Login";
+import { NavDropdown } from "react-bootstrap";
 
 
 const Navbar = () => {
-    
+
   const dispatch = useDispatch();
   const allProduct = useSelector((s) => s.cartReducer.allProduct);
   const navigate = useNavigate();
@@ -33,10 +33,10 @@ const Navbar = () => {
 
   return (
     <>
-      {/* <Link to={"/login"}>Logout</Link> */}
+      <Link to={"/login"}>Logout</Link>
       <nav className="navbar navbar-expand-lg bg-secondary text-white">
         <div className="container-fluid" style={{ color: "white" }}>
-          <img src="../images/logo.png" style={{ width: "70px", height: "60px" }} alt="" />
+          <img src="../images/logo.png" style={{ width: "70px", height: "60px" }} alt="logo" />
           <Link className="navbar-brand" to="/" style={{ color: "white" }}>
             Refurbished Book Store
           </Link>
@@ -68,7 +68,7 @@ const Navbar = () => {
                   Feature Books
                 </Link>
                 <ul className="dropdown-menu">
-                <li>
+                  <li>
                     <Link className="dropdown-item" onClick={() => filterResult("UPDATE_ALL_PRODUCT")}>
                       All Books
                     </Link>
@@ -132,33 +132,33 @@ const Navbar = () => {
               <i className="fa-solid fa-cart-shopping" style={{ margin: "10px 10px", color: "white" }}></i>
             </Link>
 
-          { userInfo? (
-            <NavDropdown title={userInfo.name} id="username">
+            {userInfo ? (
+              <NavDropdown title={userInfo.name} id="username">
                 <Link to='/profile'>
-                    <NavDropdown.Item>
-                        Profile
-                    </NavDropdown.Item>
-                    <NavDropdown.Item onClick={handleLogout}>
-                        Logout
-                    </NavDropdown.Item>
+                  <NavDropdown.Item>
+                    <Link to="/Profile">Profile</Link>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item onClick={handleLogout}>
+                    Logout
+                  </NavDropdown.Item>
                 </Link>
 
-            </NavDropdown>
-          ) : (
-            <Link to='/Login'>
-               <i className="fa-solid fa-user" style={{ margin: "10px 10px", color: "white" }}>&nbsp; Sign In</i>
-                
-                
-            
-            </Link>
-          )}
+              </NavDropdown>
+            ) : (
+              <Link to='/Login'>
+                <i className="fa-solid fa-user" style={{ margin: "10px 10px", color: "white" }}>&nbsp; Sign In</i>
 
-            
+
+
+              </Link>
+            )}
+
+
           </div>
         </div>
       </nav>
       <div className="admin" style={{ position: "absolute", top: "1px", right: "1px", border: "cover" }}>
-        <Link to="/AdminL">Admin</Link> 
+        <Link to="/AdminL">Admin</Link>
       </div>
     </>
   );

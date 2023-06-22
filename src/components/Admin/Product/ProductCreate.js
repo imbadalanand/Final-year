@@ -5,6 +5,7 @@ const ProductCreate = () => {
 
     const [id, idchange] = useState("");
     const [name, namechange] = useState("");
+    const [image, imagechange] = useState("");
     const [language, languagechange] = useState("");
     const [category, categorychange] = useState("");
     const [price, pricechange] = useState("");
@@ -19,7 +20,7 @@ const ProductCreate = () => {
 
     const handlesubmit = (e) => {
         e.preventDefault();
-        const productdata = { id, name, language, category, price, quantity, author, rating, description, publisher };
+        const productdata = { id, name, language, image, category, price, quantity, author, rating, description, publisher };
 
 
         fetch("http://localhost:5000/products", {
@@ -62,6 +63,13 @@ const ProductCreate = () => {
                                             <label>Book Name</label>
                                             <input required value={name} onMouseDown={e => valchange(true)} onChange={e => namechange(e.target.value)} className="form-control"></input>
                                             {name.length === 0 && validation && <span className="text-danger">Enter the book name</span>}
+                                        </div>
+                                    </div>
+
+                                    <div className="col-lg-12">
+                                        <div className="form-group">
+                                            <label>Book Image</label>
+                                            <input value={image} onChange={e => imagechange(e.target.value)} className="form-control" placeholder='Enter image link'></input>
                                         </div>
                                     </div>
 

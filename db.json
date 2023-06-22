@@ -2,6 +2,7 @@
   "products": [
     {
       "name": "Political Science",
+      "id": 1,
       "language": "Hindi",
       "category": "Politics",
       "image": "/images/polscience.jpg",
@@ -316,10 +317,10 @@
   "users": [
     {
       "id": "hemant",
-      "name": "hemant raj",
+      "name": "Hemant Raj",
       "password": "12345",
       "email": "hemant@gmail.com",
-      "phone": "77577556778",
+      "phone": "7004493428",
       "country": "india",
       "address": "fjkjllkdcklfsdklsdj",
       "gender": "male"
@@ -366,5 +367,11 @@
   ],
   "orders": [
     {}
+  ],
+  "admin": [
+    {
+      "id": "hemant",
+      "password": "12345"
+    }
   ]
 }
