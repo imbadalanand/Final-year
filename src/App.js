@@ -24,6 +24,7 @@ import ProductCreate from "./components/Admin/Product/ProductCreate";
 import ProductDetails from "./components/Admin/Product/ProductDetails";
 import ProductEdit from "./components/Admin/Product/ProductEdit";
 import Order from "./components/Admin/Order/Order";
+import  UserProfile  from "./components/User/UserProfile";
 
 function App() {
   console.log(process.env);
@@ -63,6 +64,7 @@ function App() {
           <Route path="/product/detail/:productid" element={<ProductDetails/>} />
           <Route path="/product/edit/:productid" element={<ProductEdit/>} />
           <Route path="/Order" element={<Order/>} />
+          <Route path="/UserProfile/:activepage" element={<UserProfile/>} />
 
             </Routes>
           </main>

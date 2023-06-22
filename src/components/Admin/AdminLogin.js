@@ -1,49 +1,86 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const AdminLogin = () => {
-    return (
-        <div>
-            <section className="vh-100">
-                <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-sm-6 text-black">
 
-                            <div className="px-5 ms-xl-4">
-                                <i className="fa-solid fa-open-book"></i>
-                                <span className="h1 fw-bold mb-0">Admin Login</span>
-                            </div>
+  const [id, idupdate] = useState("");
+  const [password, passwordupdate] = useState("");
 
-                            <div className="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+  const usenavigate=useNavigate()
 
-                                <form style={{ width: "23rem" }}>
-                                    <div className="form-outline mb-4">
-                                        <label className="form-label" for="form2Example18">Email address</label>
-                                        <input type="email" id="form2Example18" className="form-control form-control-lg" placeholder='Enter Email Address' />
-                                    </div>
+  const ProceedLogin = (e) => {
+    e.preventDefault();
+    if(validate()){
+      //implementation
+      //console.log('proceed');
+      fetch("http://localhost:5000/admin/"+id).then((res)=>{
+        return res.json();
+      }).then((resp)=>{
+        console.log(resp)
+        if(Object.keys(resp).length===0){
+          alert('Please Enter valid username');
+        }else{
+          if (resp.id === id && resp.password === password){
+            alert('Success');
+            localStorage.setItem("user", JSON.stringify(resp));
+            localStorage.setItem("loggedin", true);
+            usenavigate('/Admin')
+          }else{
+            alert('Please Enter valid credentials');
+          }
 
-                                    <div className="form-outline mb-4">
-                                        <label className="form-label" for="form2Example28">Password</label>
-                                        <input type="password" id="form2Example28" className="form-control form-control-lg" placeholder='Password' />
-                                    </div>
+        }
+      }).catch((err)=>{
+        alert.error('Login Failed due to:'+err.message);
+      });
 
-                                    <div className="pt-1 mb-4">
-                                        <Link to="/Admin"><button className="btn btn-info btn-lg btn-block" type="button">Login</button></Link>
-                                    </div>
-                                </form>
+    }
+  }
+  const validate =()=>{
+    let result=true;
+    if(id ==='' || id===null){
+      result=false;
+      alert('Please Enter Username');
+      
+    }
+    if(password ==='' || password===null){
+      result=false;
+      alert('Please Enter Password');
+     
 
-                            </div>
+    }
+    return result;
+  }
 
-                        </div>
-                        <div className="col-sm-6 px-0 d-none d-sm-block">
-                            <img src="https://www.pngitem.com/pimgs/m/274-2748802_transparent-tech-support-icon-png-admin-login-images.png"
-                                alt="admin Login img" className="w-100 vh-100" style={{ objectFit: "cover", objectPosition: "left" }} />
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    )
-}
-
-export default AdminLogin
+  return (
+    <div className="row">
+      <div className="offset-lg-3 col-lg-6">
+        <form onSubmit={ProceedLogin} className="container">
+          <div className="card">
+            <div className="card-header">
+              <h1>Admin Login</h1>
+            </div>
+            <div className="card-body">
+              <div className="form-group">
+                <label>
+                  Admin User ID <span className="errmsg">*</span>
+                </label>
+                <input value={id} onChange={e=>idupdate(e.target.value)} className="form-control"></input>
+              </div>
+              <div className="form-group">
+                <label>Password <span className="errmsg">*</span></label>
+                <input type="password" value={password} onChange={e=>passwordupdate(e.target.value)} className="form-control"></input>
+              </div>
+            </div>
+            <div className="card-footer">
+              <button type="submit" className="btn btn-primary" >Admin Login</button>
+             
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+export default AdminLogin;
