@@ -10,10 +10,10 @@ const ContextCart = (props) => {
     return (
       <>
         <header>
-          <Link className="continue-shopping" to="/">
-            <img src="/images/arrow1.png" alt="arrow" className="arrow-icon" /></Link>
+          <div className="continue-shopping" to="/">
+            {/* <img src="/images/arrow1.png" alt="arrow" className="arrow-icon" /> */}
             <h3>continue shopping</h3>
-          
+            </div>
           <div className="cart-icon">
             <img src="./images/cart.jpg" alt="cart" />
             <p>0</p>
@@ -35,7 +35,7 @@ const ContextCart = (props) => {
     <>
       <header>
         <div className="continue-shopping">
-          <img src="/images/arrow1.png" alt="arrow" className="arrow-icon" />
+        <Link to="/" ><i className="fa-solid fa-arrow-left" style={{ margin: "20px 20px", color: "black" }} ></i></Link>
           <h3>continue shopping</h3>
         </div>
         <div className="cart-icon">
