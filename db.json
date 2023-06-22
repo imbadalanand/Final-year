@@ -2,6 +2,7 @@
   "products": [
     {
       "name": "Political Science",
+      "id": 1,
       "language": "Hindi",
       "category": "Politics",
       "image": "/images/polscience.jpg",
@@ -311,6 +312,45 @@
       "rating": "5",
       "description": "Oswaal CBSE Chapterwise & Topicwise Question Bank Class 10 Science Book",
       "publisher": "Oswaal Books and Learning Private Limited"
+    },
+    {
+      "id": 24,
+      "name": "CBSE All In One Social Science",
+      "language": "English",
+      "category": "Science",
+      "image": "/images/25.jpg",
+      "price": "300",
+      "quantity": "1",
+      "author": "Madhumita Pattrea",
+      "rating": "4",
+      "description": "CBSE All In One Social Science",
+      "publisher": "Arihant Publications"
+    },
+    {
+      "id": 25,
+      "name": "National Science Olympiad",
+      "language": "English",
+      "category": "Science",
+      "image": "/images/26.jpg",
+      "price": "165",
+      "quantity": "1",
+      "author": "Anil Ahlawat",
+      "rating": "5",
+      "description": "National Science Olympiad (NSO) Work Book for Class 8 - Quick Recap, MCQs, Previous Years Solved Paper and Achievers Section",
+      "publisher": "Mtg Learning Media Pvt Ltd"
+    },
+    {
+      "id": 26,
+      "name": "NCERT Examplar Science ",
+      "language": "English",
+      "category": "Science",
+      "image": "/images/27.jpg",
+      "price": "230",
+      "quantity": "1",
+      "author": "Indu Gupta, Rajesh Singh, Sikha Sharma",
+      "rating": "4",
+      "description": "NCERT Exemplar Science Problems - Solutions (Class 10) is a comprehensive book for students of standard X studying in schools affiliated to the Central Board of Secondary Education. The book comprises chapters on chemical reactions and equations, acids, bases and salts, metals and non-metals, life processes, human eye and colorful world, electricity and the environment. In addition, the book consists of several solved examples for thorough revision and final practice. This book is essential for students preparing for their board examinations.",
+      "publisher": " Arihant Publishers"
     }
   ],
   "users": [
