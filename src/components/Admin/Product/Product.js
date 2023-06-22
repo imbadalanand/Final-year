@@ -39,8 +39,8 @@ const Product = () => {
   return (
     <div className='container'>
       <div className='card'>
-        <div className='card-title' style={{ textAlign: "center" }}>
-          {/* <img src="/images/arrow1.png" alt="arrow" className="arrow-icon" style={{ width:"25px", height:"25px"}} /> */}
+        <div className='card-header' style={{ textAlign: "center" }}>
+          <Link to="/Admin" style={{ width:"50px", height:"50px",color:"black", marginRight:"65rem"}}><i className="fa-solid fa-arrow-left-long" ></i></Link>
           <h2>Product Book List</h2>
         </div>
         <div className="card-body">
@@ -75,7 +75,7 @@ const Product = () => {
                     <td>{item.price}</td>
                     <td>{item.author}</td>
                     <td>{item.rating}</td>
-                    <td>{item.description}</td>
+                    <td>{item.description.substring(0, 100)+"..." }</td>
                     <td>{item.publisher}</td>
                     <td>
                       <a onClick={() => { LoadEdit(item.id) }} className="btn btn-success">Edit</a>

@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
 import Carousel from '../components/Carousel';
-import Pagination from '../components/Pagination';
 import { updateAllProduct } from "../redux/actions/product";
 import { addToCart } from "../redux/actions/cart";
 
@@ -89,7 +88,6 @@ function HomeScreen() {
                     
                 </div>
             </div>
-            <Pagination />
         </>
     )
 
