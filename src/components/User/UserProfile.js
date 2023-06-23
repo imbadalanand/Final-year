@@ -9,7 +9,7 @@ const UserProfile = () => {
   alert(activepage);
   return (
     <div className="userprofile">
-      <h1>My Profile</h1>
+      <h1>My Profile 1</h1>
 
       <div className="userprofilein">
         <div className="left">
