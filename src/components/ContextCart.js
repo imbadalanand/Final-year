@@ -62,7 +62,9 @@ const ContextCart = (props) => {
           <h3>
             Total-Amount : <span>₹ {props.cart.totalAmount}</span>
           </h3>
+          <Link to='/checkout'>
           <button>checkout</button>
+          </Link>
           <button className="clear-cart" >
             Clear Cart
           </button>

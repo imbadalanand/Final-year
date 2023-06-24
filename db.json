@@ -355,7 +355,6 @@
   ],
   "users": [
     {
-
       "id": "badal",
       "name": "badal",
       "password": "12345",
@@ -366,7 +365,6 @@
       "gender": "male"
     },
     {
-
       "id": "hemant",
       "name": "Hemant Raj",
       "password": "12345",
@@ -403,6 +401,16 @@
       "phone": "1234567890",
       "country": "india",
       "address": "bihffdghg",
+      "gender": "male"
+    },
+    {
+      "id": "harshit",
+      "name": "Harshit kumar",
+      "password": "123",
+      "email": "harshit@gmail.com",
+      "phone": "9661671360",
+      "country": "india",
+      "address": "SAKETPURI ROAD NUMBER 3 , VIJAY NAGAR, HANUMAN NAGAR,KANKARBAGH,\nPATNA",
       "gender": "male"
     }
   ],
@@ -442,14 +450,12 @@
     {}
   ],
   "orders": [
-    {
-    }
+    {}
   ],
-  "review":[
+  "review": [
     {
-      "id":1,
-      "productId":1
-
+      "id": 1,
+      "productId": 1
     }
   ]
 }

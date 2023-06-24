@@ -25,7 +25,7 @@ import ProductEdit from "./components/Admin/Product/ProductEdit";
 import Order from "./components/Admin/Order/Order";
 import OrderDetail from "./components/Admin/Order/OrderDetail";
 import  UserProfile  from "./components/User/UserProfile";
-
+import Checkout from "./components/Checkout";
 
 
 function App() {
@@ -67,7 +67,7 @@ function App() {
           <Route path="/Order" element={<Order/>} />
           <Route path="/order/detail/:orderid" element={<OrderDetail/>} />
           <Route path="/UserProfile/:activepage" element={<UserProfile/>} />
-
+          <Route path="/checkout" element={<Checkout/>} />
             </Routes>
           </main>
         </div>
