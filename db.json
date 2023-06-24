@@ -392,6 +392,16 @@
       "country": "india",
       "address": "bihffdghg",
       "gender": "male"
+    },
+    {
+      "id": "harshit",
+      "name": "Harshit kumar",
+      "password": "123",
+      "email": "harshit@gmail.com",
+      "phone": "9661671360",
+      "country": "india",
+      "address": "SAKETPURI ROAD NUMBER 3 , VIJAY NAGAR, HANUMAN NAGAR,KANKARBAGH,\nPATNA",
+      "gender": "male"
     }
   ],
   "admin": [
