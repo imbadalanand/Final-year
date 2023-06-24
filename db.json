@@ -355,7 +355,6 @@
   ],
   "users": [
     {
-
       "id": "badal",
       "name": "badal",
       "password": "12345",
@@ -366,14 +365,13 @@
       "gender": "male"
     },
     {
-
       "id": "hemant",
       "name": "Hemant Raj",
       "password": "12345",
       "email": "hemant@gmail.com",
       "phone": "7004493428",
+      "address": "Mainpura",
       "country": "india",
-      "address": "fjkjllkdcklfsdklsdj",
       "gender": "male"
     },
     {
@@ -383,16 +381,6 @@
       "phone": "9854324567",
       "address": "sarai, vaishali",
       "country": "",
-      "gender": "male"
-    },
-    {
-      "id": "hemant1",
-      "name": "hemant raj",
-      "password": "1234",
-      "email": "hemant1@gmail.com",
-      "phone": "1234567890",
-      "country": "india",
-      "address": "shanccnmsnsj",
       "gender": "male"
     },
     {
@@ -419,7 +407,7 @@
     },
     {
       "id": "hemant",
-      "name": "Admin hemant",
+      "name": "Admin Hemant",
       "password": "12345",
       "email": "hemant@gmail.com",
       "phone": "7004493428",
@@ -442,14 +430,12 @@
     {}
   ],
   "orders": [
-    {
-    }
+    {}
   ],
-  "review":[
+  "review": [
     {
-      "id":1,
-      "productId":1
-
+      "id": 1,
+      "productId": 1
     }
   ]
 }
