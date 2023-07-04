@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Carousel from '../components/Carousel';
 import { updateAllProduct } from "../redux/actions/product";
 import { addToCart } from "../redux/actions/cart";
-import { MDBBtn, MDBPagination, MDBPaginationItem, MDBPaginationLink } from "mdb-react-ui-kit";
+import { MDBPagination, MDBPaginationItem, MDBPaginationLink } from "mdb-react-ui-kit";
 import { all } from 'axios';
 
 
@@ -20,12 +20,8 @@ function HomeScreen() {
     const [pageLimit, setPageLimit] = useState();
     
 
-    // console.log(cart)
-
     const handleAddToCart = (e, product) => {
 
-        // console.log(e)
-        // console.log(product)
 
         dispatch(addToCart(product))
         setRefresh(!refresh)
@@ -35,6 +31,7 @@ function HomeScreen() {
         setCurrentPage(currentPage+action)
     }
 
+    console.log(loadUserData)
     // const handleReset = () => {
     //     loadUserData(0, 4, 0);
     // }
@@ -83,8 +80,8 @@ function HomeScreen() {
                     <MDBPaginationItem>
                         <MDBPaginationLink>1</MDBPaginationLink>
                     </MDBPaginationItem>
-                    <MDBPaginationItem>
-                        <MDBBtn onClick={() => loadUserData(+1)}>Next</MDBBtn>
+                    <MDBPaginationItem >
+                        <button className='btn btn-primary' style={{width:"60px"}} onClick={() => loadUserData(+1)}>Next</button>
                     </MDBPaginationItem>
                 </MDBPagination>
             );
@@ -92,13 +89,13 @@ function HomeScreen() {
             return (
                 <MDBPagination className='mb-0'>
                     <MDBPaginationItem>
-                        <MDBBtn onClick={() => loadUserData(-1)}>Prev</MDBBtn>
+                        <button className='btn btn-primary' style={{width:"60px"}} onClick={() => loadUserData(-1) }>Prev</button>
                     </MDBPaginationItem>
                     <MDBPaginationItem>
                         <MDBPaginationLink>{currentPage +1}</MDBPaginationLink>
                     </MDBPaginationItem>
                     <MDBPaginationItem>
-                        <MDBBtn onClick={() => loadUserData(+1)}>Next</MDBBtn>
+                        <button className='btn btn-primary' style={{width:"60px"}} onClick={() => loadUserData(+1)}>Next</button>
                     </MDBPaginationItem>
                 </MDBPagination>
             );
@@ -106,9 +103,9 @@ function HomeScreen() {
             return (
                 <MDBPagination className='mb-0'>
                     <MDBPaginationItem>
-                        <MDBBtn onClick={() => loadUserData(-1)}>Prev</MDBBtn>
+                        <button className='btn btn-primary' style={{width:"60px"}} onClick={() => loadUserData(-1)}>Prev</button>
                     </MDBPaginationItem>
-                    <MDBPaginationItem>
+                    <MDBPaginationItem >
                         <MDBPaginationLink>{currentPage +1}</MDBPaginationLink>
                     </MDBPaginationItem>
                 </MDBPagination>
@@ -138,13 +135,13 @@ function HomeScreen() {
                                 </Link>
 
                                 <p>{product.category},{product.author}</p>
-                                <p> <i class="fa fa-inr"> </i>{product.price}<span><button onClick={(e) => handleAddToCart(e, product)}>Add to Cart</button></span></p>
+                                <p> <i className="fa fa-inr"> </i>{product.price}<span><button onClick={(e) => handleAddToCart(e, product)}>Add to Cart</button></span></p>
                             </div>
                         </div>
                     ))}
 
                 </div>
-                <div style={{margin:"auto", padding:"15px", maxWidth:"400px", alignContent:"center", width:"10px" }}>{renderPagination()}</div>
+                <div style={{display:"flex", justifyContent:"center", boxSizing:"content-box" }}>{renderPagination()}</div>
             </div>
         </>
     )
