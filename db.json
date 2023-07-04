@@ -370,8 +370,8 @@
       "password": "12345",
       "email": "hemant@gmail.com",
       "phone": "7004493428",
+      "address": "Mainpura",
       "country": "india",
-      "address": "fjkjllkdcklfsdklsdj",
       "gender": "male"
     },
     {
@@ -384,13 +384,23 @@
       "gender": "male"
     },
     {
-      "id": "hemant1",
-      "name": "hemant raj",
+      "id": "sujit1",
+      "name": "sujit kama",
       "password": "1234",
-      "email": "hemant1@gmail.com",
+      "email": "sujit@12233",
       "phone": "1234567890",
       "country": "india",
-      "address": "shanccnmsnsj",
+      "address": "bihffdghg",
+      "gender": "male"
+    },
+    {
+      "id": "harshit",
+      "name": "Harshit kumar",
+      "password": "123",
+      "email": "harshit@gmail.com",
+      "phone": "9661671360",
+      "country": "india",
+      "address": "SAKETPURI ROAD NUMBER 3 , VIJAY NAGAR, HANUMAN NAGAR,KANKARBAGH,\nPATNA",
       "gender": "male"
     }
   ],
@@ -407,7 +417,7 @@
     },
     {
       "id": "hemant",
-      "name": "Admin hemant",
+      "name": "Admin Hemant",
       "password": "12345",
       "email": "hemant@gmail.com",
       "phone": "7004493428",

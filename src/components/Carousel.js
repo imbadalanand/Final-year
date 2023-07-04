@@ -11,9 +11,11 @@ const Carousel = () => {
                     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
 
                 </div>
-                <img src="./images/C4.jpg" style={{width:"1317px", height:"80px"}} alt="" />
-                <div className="carousel-inner">
-                    <div className="carousel-item active" data-bs-interval="200">
+                <div className="carousel-inner slide">
+                    <div>
+                        <img src="./images/C4.jpg" style={{ width: "1317px", height: "80px" }} alt="" />
+                    </div>
+                    <div className="carousel-item active" data-bs-interval="2000">
                         <img src="./images/C1.jpg" className="d-block w-100" alt="..." />
                     </div>
                     <div className="carousel-item" data-bs-interval="2000">
