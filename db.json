@@ -402,6 +402,16 @@
       "country": "india",
       "address": "SAKETPURI ROAD NUMBER 3 , VIJAY NAGAR, HANUMAN NAGAR,KANKARBAGH,\nPATNA",
       "gender": "male"
+    },
+    {
+      "id": "sujitmm",
+      "name": "sujit munda",
+      "password": "123",
+      "email": "munda@gmail.com",
+      "phone": "9955223344",
+      "country": "india",
+      "address": "boring road ",
+      "gender": "male"
     }
   ],
   "admin": [
