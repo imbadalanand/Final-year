@@ -28,12 +28,14 @@ const Navbar = () => {
   const handleLogout = () => {
     localStorage.removeItem("loggedin");
     localStorage.removeItem("user");
-    navigate("/Login");
+    localStorage.removeItem("admin");
+    localStorage.removeItem("Aloggedin");
+        navigate("/");
   };
 
   return (
     <>
-      <Link to={"/login"}>Logout</Link>
+     
       <nav className="navbar navbar-expand-lg bg-secondary text-white">
         <div className="container-fluid" style={{ color: "white" }}>
           <Link className="navbar-brand" to="/" style={{ color: "white" }}>
@@ -136,7 +138,7 @@ const Navbar = () => {
               <NavDropdown title={userInfo.name} id="username">
                 <Link to='/profile'>
                   <NavDropdown.Item>
-                    <Link to="/Profile">Profile</Link>
+                    <Link to="/UserProfile/accountsettings">Profile</Link>
                   </NavDropdown.Item>
                   <NavDropdown.Item onClick={handleLogout}>
                     Logout

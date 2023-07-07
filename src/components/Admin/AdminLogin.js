@@ -24,7 +24,7 @@ const AdminLogin = () => {
           if (resp.id === id && resp.password === password){
             alert('Success');
             localStorage.setItem("user", JSON.stringify(resp));
-            localStorage.setItem("loggedin", true);
+            localStorage.setItem("Aloggedin", true);
             usenavigate('/Admin')
           }else{
             alert('Please Enter valid credentials');

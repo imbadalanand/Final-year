@@ -1,14 +1,23 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import UserSidebar from "./UserSidebar";
 import AccountSettings from "./AccountSettings";
 import "./userprofile.css";
+import ChangePassword from "./ChangePassword";
+
 
 const UserProfile = () => {
+  const usenavigate = useNavigate();
+ 
   const { activepage } = useParams();
-  alert(activepage);
+  
+  
+  
   return (
     <div className="userprofile">
+
+
+     
       <h1>My Profile</h1>
 
       <div className="userprofilein">
@@ -17,6 +26,7 @@ const UserProfile = () => {
         </div>
         <div className="right">
           {activepage === "accountsettings" && <AccountSettings />}
+          {activepage === "changepassword" && <ChangePassword />}
         </div>
       </div>
     </div>

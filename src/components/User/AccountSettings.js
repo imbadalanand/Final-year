@@ -3,17 +3,27 @@ import './accountsetting.css'
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { all } from 'axios';
 
+
  const AccountSettings = () => {
         
 
         const userInfo = JSON.parse(localStorage.getItem("user"));
+        const userInfo1 = JSON.parse(localStorage.getItem("Aloggedin"));
+        const usenavigate = useNavigate();
+ 
+  if (userInfo1){
+    alert("You are not authorised");
+    window.location.replace('/');
+  }
+  
+  
         const [allData, setAllData] = useState({})
 
         useEffect(() => {
             fetch("http://localhost:5000/users/" + userInfo.id).then((res) => {
                 return res.json();
             }).then((resp) => {
-                setAllData(resp)
+                setAllData(resp);
                 idchange(resp.id);
                 namechange(resp.name);
                 emailchange(resp.email);
@@ -60,54 +70,53 @@ import { all } from 'axios';
     
         return (
             <div className='accountsettings'>
-                <h5>Account Setting</h5>
+                <h5 className='mainhead1'>Account Setting</h5>
 
                         <div div className='form'>
     
                         <form className="container" onSubmit={handlesubmit}>
     
-                                        <div className="col-lg-12">
+                                        
                                             <div className="form-group">
                                                 <label>Username</label>
                                                 <input value={id} disabled="disabled" className="form-control"></input>
                                             </div>
-                                        </div>
+                                       
     
-                                        <div className="col-lg-12">
+                                    
                                             <div className="form-group">
                                                 <label>Name</label>
-                                                <input required value={name} onMouseDown={e => valchange(true)} onChange={e => namechange(e.target.value)} className="form-control"></input>
+                                                <input  required value={name} onMouseDown={e => valchange(true)} onChange={e => namechange(e.target.value)} className="form-control"></input>
                                                 {name.length === 0 && validation && <span className="text-danger">Enter the name</span>}
                                             </div>
-                                        </div>
+                                      
     
-                                        <div className="col-lg-12">
+                                        
                                             <div className="form-group">
                                                 <label>Email</label>
                                                 <input value={email} onChange={e => emailchange(e.target.value)} className="form-control"></input>
                                             </div>
-                                        </div>
+                                       
     
-                                        <div className="col-lg-12">
+                                      
                                             <div className="form-group">
                                                 <label>Phone</label>
                                                 <input value={phone} onChange={e => phonechange(e.target.value)} className="form-control"></input>
                                             </div>
-                                        </div>
+                                       
     
-                                        <div className="col-lg-12">
+                                        
                                             <div className="form-group">
                                                 <label>Address</label>
                                                 <input value={address} onChange={e => addresschange(e.target.value)} className="form-control"></input>
                                             </div>
-                                        </div>
-                                     
-                                        <div className="col-lg-12">
+                                       
+
                                             <div className="form-group">
-                                                <button className="btn btn-success" type="submit">Save Changes</button>
+                                                <button className="mainbutton1" type="submit">Save Changes</button>
                                                 
                                             </div>
-                                        </div>
+                                        
     
                                 
     
