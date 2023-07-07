@@ -38,9 +38,9 @@ const Navbar = () => {
      
       <nav className="navbar navbar-expand-lg bg-secondary text-white">
         <div className="container-fluid" style={{ color: "white" }}>
-          <img src="../images/logo.png" style={{ width: "70px", height: "60px" }} alt="logo" />
           <Link className="navbar-brand" to="/" style={{ color: "white" }}>
-            Refurbished Book Store
+            {/* Refurbished Book Store */}
+            <img src="../images/logo.png" style={{ width: "300px", height: "50px" }} alt="logo" />
           </Link>
           <button
             className="navbar-toggler"
@@ -55,7 +55,7 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="/" style={{ color: "white" }}>
+                <Link className="nav-link" aria-current="page" to="/" style={{ color: "white", fontFamily:"avroRegular", fontSize:"20px" }}>
                   Home
                 </Link>
               </li>
@@ -66,7 +66,7 @@ const Navbar = () => {
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
-                  style={{ color: "white" }}>
+                  style={{ color: "white", fontFamily:"avroRegular", fontSize:"20px" }}>
                   Feature Books
                 </Link>
                 <ul className="dropdown-menu">
@@ -108,7 +108,7 @@ const Navbar = () => {
                 </ul>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/Contact" style={{ color: "white" }}>
+                <Link className="nav-link" to="/Contact" style={{ color: "white", fontFamily:"avroRegular", fontSize:"20px" }}>
                   Contact Us
                 </Link>
               </li>
