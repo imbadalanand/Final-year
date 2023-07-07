@@ -10,14 +10,6 @@ const UserProfile = () => {
   const usenavigate = useNavigate();
  
   const { activepage } = useParams();
-  const userInfo = JSON.parse(localStorage.getItem("Aloggedin"));
- 
-  if (userInfo){
-    alert("You are not authorised");
-  }
-  else{
-   
-  }
   
   
   
