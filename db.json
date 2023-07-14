@@ -356,12 +356,11 @@
   "users": [
     {
       "id": "badal",
-      "name": "Badal Kumar Gupta ",
-      "password": "12345",
+      "name": "Badal Kumar Gupta 1",
       "email": "Badaldj101@gmail.com",
       "phone": "9504695107",
-      "country": "india",
       "address": "Sarai, Vaishali",
+      "country": "india",
       "gender": "male"
     },
     {
@@ -450,7 +449,29 @@
     {}
   ],
   "orders": [
-    {}
+    {
+      "cart": [
+        {
+          "name": "Losing Hope",
+          "id": 2,
+          "language": "English",
+          "category": "Romance",
+          "image": "/images/losing-hope.jpg",
+          "price": 60,
+          "quantity": 1,
+          "author": "Mr. Hoover Collen",
+          "rating": 5,
+          "numReviews": 5,
+          "description": "Sky returns from the events outlined in Hopeless. She has been baring everything, secrets, feelings and memories, but Holder is still hiding his past. He continues to be haunted by the young girl he let walk away, and he looks for her, trying to free himself of the guilt. However, he has no idea that when he finds her, he will also find greater melancholy. In this breath-taking sequel to the bestseller, Colleen Hoover reveals the darkness behind Holders past",
+          "publisher": "Gyan Bharti"
+        }
+      ],
+      "address": {
+        "city": "patna"
+      },
+      "userid": "badal",
+      "id": 1
+    }
   ],
   "review": [
     {

@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import './accountsetting.css'
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { all } from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
  const AccountSettings = () => {
@@ -12,8 +15,8 @@ import { all } from 'axios';
         const usenavigate = useNavigate();
  
   if (userInfo1){
-    alert("You are not authorised");
-    window.location.replace('/');
+    toast.warn("You are not authorised");
+    usenavigate('/');
   }
   
   
@@ -69,6 +72,7 @@ import { all } from 'axios';
     
     
         return (
+            <>
             <div className='accountsettings'>
                 <h5 className='mainhead1'>Account Setting</h5>
 
@@ -125,6 +129,8 @@ import { all } from 'axios';
     
                    
             </div>
+            <ToastContainer/>
+            </>
         )
     }
     
