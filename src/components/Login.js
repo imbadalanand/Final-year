@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Login = () => {
   const [id, idupdate] = useState("");
   const [password, passwordupdate] = useState("");
-
+  
   const usenavigate=useNavigate()
 
   const ProceedLogin = (e) => {
@@ -17,20 +20,22 @@ const Login = () => {
       }).then((resp)=>{
         console.log(resp)
         if(Object.keys(resp).length===0){
-          alert('Please Enter valid username');
+          toast.info('Please Enter valid username');
         }else{
           if (resp.id === id && resp.password === password){
-            alert('Success');
+           
+            toast.success('Succesfully Login');
             localStorage.setItem("user", JSON.stringify(resp));
             localStorage.setItem("loggedin", true);
-            usenavigate('/')
+            usenavigate('/');
+            
           }else{
-            alert('Please Enter valid credentials');
+            toast.info('Please Enter valid credentials');
           }
 
         }
       }).catch((err)=>{
-        alert.error('Login Failed due to:'+err.message);
+        toast.error('Login Failed due to:'+err.message);
       });
 
     }
@@ -39,12 +44,12 @@ const Login = () => {
     let result=true;
     if(id ==='' || id===null){
       result=false;
-      alert('Please Enter Username');
+      toast.info('Please Enter Username');
       
     }
     if(password ==='' || password===null){
       result=false;
-      alert('Please Enter Password');
+      toast.info('Please Enter Password');
      
 
     }
@@ -52,6 +57,7 @@ const Login = () => {
   }
 
   return (
+    <>
     <div className="row">
       <div className="offset-lg-3 col-lg-6">
         <form onSubmit={ProceedLogin} className="container">
@@ -79,6 +85,9 @@ const Login = () => {
         </form>
       </div>
     </div>
+    <ToastContainer/>
+    </>
+
   );
 };
 export default Login;

@@ -1,10 +1,33 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux"; 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from "react-router-dom";
+
 
 function Checkout()
-{
+{ 
+    const usenavigate = useNavigate()
+
+   const dispatch = useDispatch()
+  const cart = useSelector(state => state.cart);
+    
+  if(!localStorage.getItem("user")){
+    usenavigate('/');
+    toast.warning("Please Login to goto in Checkout");
+  }
+    
+    useEffect(() => {
+    dispatch({ type: "GET_TOTAL" });
+    // console.log('harsh');
+  }, [cart.cart]);
+  console.log(cart, 25);
+
+  let totalCartPrice;
    
-    return(
+      return(
+          <>
         <div>
             <div className="py-3 bg-warning">
                 <div className="container">
@@ -103,12 +126,23 @@ function Checkout()
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>sgfhddghf</td>
-                                    <td>200</td>
-                                    <td>2</td>
-                                    <td>400</td>
+                               {cart.cart.map( (item, idx) => {
+                                
+                                return(
+                                <tr key={idx}>
+                                    
+                                    <td>{item.name}</td>
+                                    <td>{item.price}</td>
+                                    <td>{item.quantity}</td>
+                                    <td>{item.price * item.quantity}</td>
                                 </tr>
+                                )
+                               })}
+                               <tr>
+                                <td colSpan="2 " className="text-end">Grand Total</td>
+                                <td colSpan="2 " className="text-end">{cart.cart.reduce((total, item)=>total+(item.price*item.quantity),0)}</td>
+                                
+                               </tr>
                             </tbody>
                         </table>
 
@@ -118,6 +152,8 @@ function Checkout()
                 </div>
             </div>
         </div>
+        <ToastContainer/>
+        </>
     )
 
 }
