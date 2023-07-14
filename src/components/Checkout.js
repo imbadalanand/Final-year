@@ -22,9 +22,11 @@ function Checkout()
     dispatch({ type: "GET_TOTAL" });
     // console.log('harsh');
   }, [cart.cart]);
-  console.log(cart, 25);
+  console.log(cart);
 
-  let totalCartPrice;
+  
+
+
    
       return(
           <>
