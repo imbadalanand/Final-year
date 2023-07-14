@@ -11,6 +11,7 @@
     align-items: center;
     gap: 10px;
     padding: 20px;
+    text-decoration: none;
 }
 .usersidebar svg{
     color: gray;
@@ -30,4 +31,8 @@
     cursor: pointer;
     color: grey;
     border-radius: 5px;
+    text-decoration: none;
+
 }
+
+a:link { text-decoration: none; }

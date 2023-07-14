@@ -4,6 +4,9 @@ import './productscreen.css';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from "../redux/actions/cart";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 
@@ -11,7 +14,7 @@ function ProductScreen() {
    const { productId } = useParams();
    const [thisProduct, setProducts] = useState([]);
    const dispatch = useDispatch()
-
+   
    useEffect((props) => {
       fetch(`http://localhost:5000/products/${productId}`)
          .then(response => response.json())
@@ -19,12 +22,15 @@ function ProductScreen() {
          .catch(error => console.error(error));
    }, []);
 
+   
+
    const handleAddToCart = (e, product) => {
 
       // setCart((prev) => [...prev, product])
       dispatch(addToCart(product))
       // setCart([...cart , product ])
       // setCart([product])
+      toast.success("Added to cart")
 
    }
 
@@ -79,7 +85,7 @@ function ProductScreen() {
                </div>
             </div>
          </div>
-
+      <ToastContainer/>
       </>
    )
 }

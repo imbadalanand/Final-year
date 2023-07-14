@@ -6,9 +6,13 @@ import { updateAllProduct } from "../redux/actions/product";
 import { addToCart } from "../redux/actions/cart";
 import { MDBPagination, MDBPaginationItem, MDBPaginationLink } from "mdb-react-ui-kit";
 import { all } from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 function HomeScreen() {
+   
     const dispatch = useDispatch()
     const allProduct = useSelector((s) => s.cartReducer.allProduct)
     const filteredProduct = useSelector((s) => s.cartReducer.filteredProduct)
@@ -25,6 +29,11 @@ function HomeScreen() {
 
         dispatch(addToCart(product))
         setRefresh(!refresh)
+        toast.success("Added to Cart!", {
+            position:"top-right"
+        }
+        );
+        
     }
 
     const loadUserData = (action) => {
@@ -121,6 +130,8 @@ function HomeScreen() {
                 <h1>Featured Books</h1>
                 <hr />
 
+               
+
                 <div className="products">
                     {getData().map(product => (
 
@@ -143,6 +154,7 @@ function HomeScreen() {
                 </div>
                 <div style={{display:"flex", justifyContent:"center", boxSizing:"content-box" }}>{renderPagination()}</div>
             </div>
+            <ToastContainer/>
         </>
     )
 
