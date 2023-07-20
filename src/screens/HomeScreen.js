@@ -5,7 +5,6 @@ import Carousel from '../components/Carousel';
 import { updateAllProduct } from "../redux/actions/product";
 import { addToCart } from "../redux/actions/cart";
 import { MDBPagination, MDBPaginationItem, MDBPaginationLink } from "mdb-react-ui-kit";
-import { all } from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
