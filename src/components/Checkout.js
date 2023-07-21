@@ -59,7 +59,8 @@ const [checkoutInput, setcheckoutInput] = useState({
         cart:cart.cart,
         address:address,
         userid:user.id,
-        id:Date.now()
+        id:Date.now(),
+        orderdate:Date()
     }
     if(cart.cart?.length && user.id){
         fetch("http://localhost:5000/orders", {
