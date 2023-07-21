@@ -9,9 +9,9 @@ const Order = () => {
   const LoadDetail = (id) => {
     navigate("/order/detail/" + id);
   }
-  const LoadEdit = (id) => {
-    navigate("/order/edit/" + id);
-  }
+  // const LoadEdit = (id) => {
+  //   navigate("/order/edit/" + id);
+  // }
   const Removefunction = (id) => {
     if (window.confirm('Do you want to remove?')) {
       fetch("http://localhost:5000/orders/" + id, {
@@ -35,6 +35,17 @@ const Order = () => {
     })
   }, [])
 
+  console.log(orderdata);
+
+  const getDeliveryDate = (date) =>{
+    if(date){
+      date = new Date(date);
+      date =  date.setDate(date.getDate() + 10)
+      console.log(new Date(date));
+      return new Date(date).toString()
+    }
+  }
+
 
   return (
     <div className='container'>
@@ -43,9 +54,9 @@ const Order = () => {
           {/* <img src="/images/arrow1.png" alt="arrow" className="arrow-icon" style={{ width:"25px", height:"25px"}} /> */}
           <h2>Ordered Book List</h2>
         </div>
-        <div className="card-body">
+        {/* <div className="card-body">
           <Link to="/order/create" className="btn btn-success">Add New Order(+)</Link>
-        </div>
+        </div> */}
         <div className='card-body'>
           <table className="table table-bordered">
             <thead className="bg-dark text-white">
@@ -54,10 +65,10 @@ const Order = () => {
                 <td>Order Date</td>
                 <td>Customer Name</td>
                 <td>Phone</td>
-                <td>Address</td>
-                <td>Payment Status</td>
+                <td>Delivery Address</td>
+                {/* <td>Payment Status</td> */}
                 <td>Delivery Date</td>
-                <td>Tracking No</td>
+                {/* <td>Tracking No</td> */}
                 <td>Action</td>
 
               </tr>
@@ -67,17 +78,18 @@ const Order = () => {
               {orderdata &&
                 orderdata.map(item => (
                   <tr key={item.id}>
-                    <td>{item.Odate}</td>
-                    <td>{item.name}</td>
-                    <td>{item.phone}</td>
-                    <td>{item.address}</td>
-                    <td>{item.paymentstatus}</td>
-                    <td>{item.Ddate}</td>
-                    <td>{item.tracking}</td>
-                    <td>{item.action}</td>
+                    <td>{item.id}</td>
+                    <td>{item.orderdate}</td>
+                    <td>{item.address?.firstname + " "+item.address?.lastname}</td>
+                    <td>{item.address?.phone}</td>
+                    <td>{item.address?.address+","+item.address?.city+","+item.address?.state+" - "+item.address?.zipcode}</td> 
+                    {/* <td>{item.paymentstatus}</td> */}
+                    <td>{getDeliveryDate(item.orderdate)}</td>
+                    {/* <td>{item.tracking}</td> */}
+                    {/* <td>{item.action}</td> */}
                     <td style={{width:"20px"}}>
-                      <a onClick={() => { LoadEdit(item.id) }} className="btn btn-success">Edit</a>
-                      <a onClick={() => { Removefunction(item.id) }} className="btn btn-danger">Remove</a>
+                      {/* <a onClick={() => { LoadEdit(item.id) }} className="btn btn-success">Edit</a> */}
+                      <a onClick={() => { Removefunction(item.id) }} className="btn btn-danger">Cancel</a>
                       <a onClick={() => { LoadDetail(item.id) }} className="btn btn-primary">Details</a>
                     </td>
                   </tr>
