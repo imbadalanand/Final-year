@@ -1,21 +1,34 @@
+import React from 'react'
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-const Login = () => {
-  const [id, idupdate] = useState("");
-  const [password, passwordupdate] = useState("");
+const AdminLogin = () => {
+
   
   const usenavigate=useNavigate()
+  if(localStorage.getItem("user")){
+    usenavigate('/');
+    toast.warn("User Account, Please Logout")
+  }
+
+  if(localStorage.getItem("Aloggedin")){
+    usenavigate('/Admin');
+  }
+  
+
+  const [id, idupdate] = useState("");
+  const [password, passwordupdate] = useState("");
+
 
   const ProceedLogin = (e) => {
     e.preventDefault();
     if(validate()){
       //implementation
       //console.log('proceed');
-      fetch("http://localhost:5000/users/"+id).then((res)=>{
+      fetch("http://localhost:5000/admin/"+id).then((res)=>{
         return res.json();
       }).then((resp)=>{
         console.log(resp)
@@ -23,12 +36,11 @@ const Login = () => {
           toast.info('Please Enter valid username');
         }else{
           if (resp.id === id && resp.password === password){
-           
-            toast.success('Succesfully Login');
+          
             localStorage.setItem("user", JSON.stringify(resp));
-            localStorage.setItem("loggedin", true);
-            usenavigate('/');
-            
+            localStorage.setItem("Aloggedin", true);
+            usenavigate('/Admin')
+            toast.success('Login Success');
           }else{
             toast.info('Please Enter valid credentials');
           }
@@ -63,12 +75,12 @@ const Login = () => {
         <form onSubmit={ProceedLogin} className="container">
           <div className="card">
             <div className="card-header">
-              <h1>User Login</h1>
+              <h1>Admin Login</h1>
             </div>
             <div className="card-body">
               <div className="form-group">
                 <label>
-                  User Name <span className="errmsg">*</span>
+                  Admin User ID <span className="errmsg">*</span>
                 </label>
                 <input value={id} onChange={e=>idupdate(e.target.value)} className="form-control"></input>
               </div>
@@ -78,8 +90,8 @@ const Login = () => {
               </div>
             </div>
             <div className="card-footer">
-              <button type="submit" className="btn btn-primary" >Login</button>
-              <Link className="btn btn-success" to={'/Signup'}>New User</Link>
+              <button type="submit" className="btn btn-primary" >Admin Login</button>
+             
             </div>
           </div>
         </form>
@@ -87,7 +99,6 @@ const Login = () => {
     </div>
     <ToastContainer/>
     </>
-
   );
 };
-export default Login;
+export default AdminLogin;

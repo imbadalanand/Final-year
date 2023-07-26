@@ -57,7 +57,7 @@ main{
   justify-items: center;
 }
 .card-detail p{
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: sans-serif;
 
 }
 .card-detail p:nth-child(1){
@@ -85,9 +85,11 @@ color: black;
     margin-left: 60px;
     background-color: #008CBA;
     color: white;
-    font-size: medium;
-    font-weight: 200;
+    font-size: 15px;
+    font-weight: 400;
     border-radius: 5px;
+    height: 30px;
+    width: 100px;
 
 }
 .card-detail button :hover {
@@ -100,3 +102,4 @@ h1{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   text-align: center;
 }
+

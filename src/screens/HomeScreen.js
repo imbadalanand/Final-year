@@ -1,47 +1,62 @@
-import { Link,useParams } from 'react-router-dom';
-
-import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react';
 import Carousel from '../components/Carousel';
-import Pagination from '../components/Pagination';
-import axios from 'axios';
-
+import { updateAllProduct } from "../redux/actions/product";
+import { addToCart } from "../redux/actions/cart";
+import { MDBPagination, MDBPaginationItem, MDBPaginationLink } from "mdb-react-ui-kit";
+import { all } from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
 function HomeScreen() {
+   
+    const dispatch = useDispatch()
+    const allProduct = useSelector((s) => s.cartReducer.allProduct)
+    const filteredProduct = useSelector((s) => s.cartReducer.filteredProduct)
 
     const [cart, setCart] = useState([])
     const [refresh, setRefresh] = useState(false)
-    const [searchTerm, setSearchTerm] = useState("");
 
-    console.log(cart)
+    const [currentPage, setCurrentPage] = useState(0);
+    const [pageLimit, setPageLimit] = useState();
+    
 
     const handleAddToCart = (e, product) => {
 
-        console.log(e)
-        console.log(product)
 
-        setCart((prev) => [...prev, product])
+        dispatch(addToCart(product))
         setRefresh(!refresh)
-        // setCart([...cart , product ])
-        // setCart([product])
-
+        toast.success("Added to Cart!", {
+            position:"top-right"
+        }
+        );
+        
     }
 
-    const [products, setProducts] = useState([]);
-    const [records, setRecords] = useState([]);
-    const [search, setsearch] = useState('')
-      
+    const loadUserData = (action) => {
+        setCurrentPage(currentPage+action)
+    }
+
+    console.log(loadUserData)
+    // const handleReset = () => {
+    //     loadUserData(0, 4, 0);
+    // }
+
+
+
     useEffect(() => {
-      axios.get('http://localhost:5000/products')
-        .then(res => {
-        setProducts(res.data)
-         setRecords(res.data)
-    })
-        .catch(error => console.error(error));
+        fetch(`http://localhost:5000/products`)
+            .then(response => response.json())
+            .then(data => {
+                setPageLimit(data.length/8)
+                dispatch(updateAllProduct(data))})
+            .catch(error => console.error(error));
     }, []);
 
-    
+
 
 
     useEffect(() => {
@@ -53,9 +68,59 @@ function HomeScreen() {
     }, [refresh])
 
 
-    // const Filter = (event) => {
-    //     setRecords(products.filter(f => f.name.toLowercase().includes(event.target.value)))
-    // }
+    // useEffect(()=>{
+    //     setPageLimit(filteredProduct/8)
+    // }, []);
+
+
+    const getData = () => {
+        let product = [...allProduct]
+        if (filteredProduct.length) {
+            product =  [...filteredProduct]
+        }
+        let _p = product.slice(currentPage*8, currentPage*8+8)
+        return _p; 
+        
+    }
+    const renderPagination = () => {
+        if (currentPage === 0) {
+            return (
+                <MDBPagination className='mb-0'>
+                    <MDBPaginationItem>
+                        <MDBPaginationLink>1</MDBPaginationLink>
+                    </MDBPaginationItem>
+                    <MDBPaginationItem >
+                        <button className='btn btn-primary' style={{width:"60px"}} onClick={() => loadUserData(+1)}>Next</button>
+                    </MDBPaginationItem>
+                </MDBPagination>
+            );
+        } else if (currentPage < pageLimit - 1) {
+            return (
+                <MDBPagination className='mb-0'>
+                    <MDBPaginationItem>
+                        <button className='btn btn-primary' style={{width:"60px"}} onClick={() => loadUserData(-1) }>Prev</button>
+                    </MDBPaginationItem>
+                    <MDBPaginationItem>
+                        <MDBPaginationLink>{currentPage +1}</MDBPaginationLink>
+                    </MDBPaginationItem>
+                    <MDBPaginationItem>
+                        <button className='btn btn-primary' style={{width:"60px"}} onClick={() => loadUserData(+1)}>Next</button>
+                    </MDBPaginationItem>
+                </MDBPagination>
+            );
+        } else {
+            return (
+                <MDBPagination className='mb-0'>
+                    <MDBPaginationItem>
+                        <button className='btn btn-primary' style={{width:"60px"}} onClick={() => loadUserData(-1)}>Prev</button>
+                    </MDBPaginationItem>
+                    <MDBPaginationItem >
+                        <MDBPaginationLink>{currentPage +1}</MDBPaginationLink>
+                    </MDBPaginationItem>
+                </MDBPagination>
+            )
+        }
+    }
 
     return (
         <>
@@ -64,35 +129,36 @@ function HomeScreen() {
                 <hr />
                 <h1>Featured Books</h1>
                 <hr />
-{/*                
-               <div>
-                <input type="text" className='form-control' onChange={Filter}></input>
-               </div> */}
-                
+
+               
+
                 <div className="products">
-                {records.map(product => (
-                            <div className='product' key={product.id}>
+                    {getData().map(product => (
+
+                        <div className='product' key={product.id}>
+                            <Link to={`/product/${product.id}`}>
+                                <img src={product.image} alt={product.name} />
+                            </Link>
+
+                            <div className='card-detail'>
                                 <Link to={`/product/${product.id}`}>
-                                    <img src={product.image} alt={product.name} />
+                                    <p>{product.name}</p>
                                 </Link>
 
-                                <div className='card-detail'>
-                                    <Link to={`/product/${product.id}`}>
-                                        <p>{product.name}</p>
-                                    </Link>
-
-                                    <p>{product.category},{product.author}</p>
-                                    <p> <i class="fa fa-inr"></i>{product.price}<span><button onClick={(e) => handleAddToCart(e, product)}>Add to Cart</button></span></p>
-                                </div>
+                                <p>{product.category},{product.author}</p>
+                                <p> <i className="fa fa-inr"> </i>{product.price}<span><button onClick={(e) => handleAddToCart(e, product)}>Add to Cart</button></span></p>
                             </div>
-                ))}
-                    
+                        </div>
+                    ))}
+
                 </div>
+                <div style={{display:"flex", justifyContent:"center", boxSizing:"content-box" }}>{renderPagination()}</div>
             </div>
-            <Pagination />
+            <ToastContainer/>
         </>
     )
 
 }
 
-export default HomeScreen ;
+
+export default HomeScreen;

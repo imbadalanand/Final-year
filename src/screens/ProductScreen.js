@@ -1,28 +1,45 @@
-import {React, useState, useEffect} from 'react';
+import { React, useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import './productscreen.css';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from "../redux/actions/cart";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
 
 function ProductScreen() {
-   const { productId } = useParams();  
+   const { productId } = useParams();
    const [thisProduct, setProducts] = useState([]);
-      
+   const dispatch = useDispatch()
+   
    useEffect((props) => {
-     fetch(`http://localhost:5000/products/${productId}`)
-       .then(response => response.json())
-       .then(data => setProducts(data))
-       .catch(error => console.error(error));
+      fetch(`http://localhost:5000/products/${productId}`)
+         .then(response => response.json())
+         .then(data => setProducts(data))
+         .catch(error => console.error(error));
    }, []);
 
    
+
+   const handleAddToCart = (e, product) => {
+
+      // setCart((prev) => [...prev, product])
+      dispatch(addToCart(product))
+      // setCart([...cart , product ])
+      // setCart([product])
+      toast.success("Added to cart")
+
+   }
+
+
    return (
       <>
          <header style={{ display: "flex", justifyContent: "space-between" }} >
             <div className='continue-shopping' style={{ display: "flex" }} >
-               <Link to="/product" ><i className="fa-solid fa-arrow-left" style={{ margin: "10px 10px", color: "black" }} ></i></Link>
+               <Link to="/" ><i className="fa-solid fa-arrow-left" style={{ margin: "10px 10px", color: "black" }} ></i></Link>
                <h3>Continue Shopping</h3>
             </div>
             <div className='cart-icon'>
@@ -30,15 +47,21 @@ function ProductScreen() {
             </div>
          </header>
          <hr />
-         
+
          <div className="maincontainer">
             <div className='image-buy'>
 
                <div className='image'>
                   <img src={thisProduct.image} alt={thisProduct.name} />
                </div>
-
-
+               <br />
+               <br />
+               <div className='buy-cart'>
+                  <div className='btn btn-primary' onClick={(e) => handleAddToCart(e, thisProduct)}>
+                     <i className="fa-solid fa-cart-shopping"></i>
+                     Add to Cart
+                  </div>
+               </div>
             </div>
 
 
@@ -57,27 +80,12 @@ function ProductScreen() {
                   <p>Price: <i className="fa-solid fa-indian-rupee-sign"></i>{thisProduct.price}</p>
                   <p>Available</p>
                   <p>Ship in Between 4-5 Business days</p>
-               </div>
+                  <p><u className='text-primary'> About The Book: </u> <br /><br />  {thisProduct.description}</p>
 
-
-               <div className='buy-cart'>
-                  <div className="buy-cart1">
-                     <ul className='roww'>
-                        <Link className='btn btn-primary' to="/Cart">
-                           <i className="fa-solid fa-cart-shopping"></i>
-                           Add to Cart
-                        </Link>
-                        <ul className='btn btn-primary'>
-                           <i className="fa-solid fa-bolt" ></i>
-                           Buy Now
-                        </ul>
-                     </ul>
-                  </div>
                </div>
             </div>
          </div>
-         <p style={{ margin: "100px 100px" }}><u className='text-primary'> About The Book: </u> <br /><br />  {thisProduct.description}</p>
-
+      <ToastContainer/>
       </>
    )
 }

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./signup.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Signup = () => {
@@ -34,7 +36,7 @@ const Signup = () => {
       errormessage += ' Email';
   }
         if(!isproceed){
-            alert(errormessage)
+            toast.info(errormessage)
         }
         return isproceed;
     }
@@ -51,15 +53,16 @@ const Signup = () => {
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(regobj)
         }).then((res) => {
-            alert('Registered successfully.');
+            toast.success('Registered successfully.');
             usenavigate('/Login');
            
         }).catch((err) => {
-            alert('Failed :' + err.message);
+          toast.error('Failed :' + err.message);
         });
     }
     }
   return (
+    <>
     <div>
       <div className="offset-lg-3 col-lg-6">
         <form className="container" onSubmit={handleSubmit}>
@@ -155,6 +158,8 @@ const Signup = () => {
         </form>
       </div>
     </div>
+    <ToastContainer/>
+  </>
   );
 };
 
