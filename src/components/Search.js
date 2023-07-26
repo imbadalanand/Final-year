@@ -37,8 +37,7 @@ function Search() {
        .catch(error => console.error(error));
    },[searchid]);
   
-
-
+  
    return(
     <div>
     <hr />

@@ -1,7 +1,21 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Admin = () => {
+    
+    const navigate = useNavigate();
+
+    if((localStorage.getItem("admin")))
+    {    
+    }
+    else{
+        navigate("/AdminL");
+        toast.error("Please Admin Login")
+    }
+
     return (
         <>
             <div className="d-flex justify-content-around mt-4">

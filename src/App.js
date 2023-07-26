@@ -26,6 +26,10 @@ import Order from "./components/Admin/Order/Order";
 import OrderDetail from "./components/Admin/Order/OrderDetail";
 import  UserProfile  from "./components/User/UserProfile";
 import Checkout from "./components/Checkout";
+import Userorder from "./components/User/Userorder";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 function App() {
@@ -66,6 +70,7 @@ function App() {
           <Route path="/product/edit/:productid" element={<ProductEdit/>} />
           <Route path="/Order" element={<Order/>} />
           <Route path="/order/detail/:orderid" element={<OrderDetail/>} />
+          <Route path="/Userorder/:orderid" element={<Userorder/>} />
           <Route path="/UserProfile/:activepage" element={<UserProfile/>} />
           <Route path="/checkout" element={<Checkout/>} />
             </Routes>

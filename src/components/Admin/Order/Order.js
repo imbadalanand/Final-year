@@ -67,7 +67,7 @@ const Order = () => {
                 <td>Phone</td>
                 <td>Delivery Address</td>
                 {/* <td>Payment Status</td> */}
-                <td>Delivery Date</td>
+                <td>Expected Delivery Date</td>
                 {/* <td>Tracking No</td> */}
                 <td>Action</td>
 

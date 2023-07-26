@@ -12,6 +12,16 @@ function Checkout()
 
    const dispatch = useDispatch()
   const cart = useSelector(state => state.cart);
+
+  
+  if(localStorage.getItem("user")){
+   
+  }
+  else{
+    usenavigate("/Login")
+    toast.error("Please Login to go Checkout");
+  }
+
     
 //   if(!localStorage.getItem("user")){
 //     usenavigate('/');
@@ -103,11 +113,11 @@ const [checkoutInput, setcheckoutInput] = useState({
                                 </div>
                                 <div className="card-body">
 
-                                    <div className="row">
+                                    <div className="row ">
                                       <div className="col-md-6">
                                         <div className="form-group mb-3">
                                             <label> First Name</label>
-                                            <input type="text" onChange={handleInput} value={checkoutInput.firstname} name="firstname" className="form-control"/>
+                                            <input type="text" onChange={handleInput} value={checkoutInput.firstname} name="firstname" className="form-control needs-validation" required="true"/>
                                         </div>
                                         </div>  
 

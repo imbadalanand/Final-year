@@ -4,6 +4,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { updateFilteredProduct } from "../redux/actions/product";
 // import Login from "./Login";
 import { NavDropdown } from "react-bootstrap";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 const Navbar = () => {
@@ -21,9 +24,24 @@ const Navbar = () => {
   };
 
   const [searchid, searchupdate] = useState("");
+  if (searchupdate == "")
+  {
+
+  }
 
 
   const userInfo = JSON.parse(localStorage.getItem("user"));
+  const cart =() => {
+    
+    if(localStorage.getItem("user")){
+      navigate("/Cart")
+
+    }
+    else{
+      navigate("/Login");
+      toast.error("Please Login to View Cart");
+    }
+  }
 
   const handleLogout = () => {
     localStorage.removeItem("loggedin");
@@ -31,6 +49,7 @@ const Navbar = () => {
     localStorage.removeItem("admin");
     localStorage.removeItem("Aloggedin");
         navigate("/");
+        toast.success("Logout Successful");
   };
 
   return (
@@ -122,6 +141,7 @@ const Navbar = () => {
                 id="userInput"
                 placeholder="Search"
                 aria-label="Search"
+                
               />
               <Link to={`/Search/${searchid}`}>
                 <button className="btn btn-light" type="submit">
@@ -130,9 +150,9 @@ const Navbar = () => {
               </Link>
             </form>
 
-            <Link to="/Cart">
-              <i className="fa-solid fa-cart-shopping" style={{ margin: "10px 10px", color: "white" }}></i>
-            </Link>
+            
+              <i onClick={() => cart()} className="fa-solid fa-cart-shopping" style={{cursor: "pointer",margin: "10px 10px", color: "white" }}></i>
+           
 
             {userInfo ? (
               <NavDropdown title={userInfo.name} id="username">
