@@ -36,10 +36,11 @@ const AdminLogin = () => {
           toast.info('Please Enter valid username');
         }else{
           if (resp.id === id && resp.password === password){
-            toast.success('Success');
+          
             localStorage.setItem("user", JSON.stringify(resp));
             localStorage.setItem("Aloggedin", true);
             usenavigate('/Admin')
+            toast.success('Login Success');
           }else{
             toast.info('Please Enter valid credentials');
           }

@@ -43,7 +43,8 @@ const UserCreate = () => {
                     <form className="container" onSubmit={handlesubmit}>
 
                         <div className="card" style={{ "textAlign": "left" }}>
-                            <div className="card-title" style={{ textAlign: "center" }}>
+                            <div cl
+                            assName="card-title" style={{ textAlign: "center" }}>
                                 <h2>Create User</h2>
                             </div>
                             <div className="card-body">

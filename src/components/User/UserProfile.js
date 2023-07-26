@@ -4,12 +4,22 @@ import UserSidebar from "./UserSidebar";
 import AccountSettings from "./AccountSettings";
 import "./userprofile.css";
 import ChangePassword from "./ChangePassword";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Yourorders from "./Yourorders";
 
 
 const UserProfile = () => {
   const usenavigate = useNavigate();
  
   const { activepage } = useParams();
+
+  const admin = JSON.parse(localStorage.getItem("Aloggedin"));
+
+  if (admin){
+    usenavigate('/Admin');
+  }
+  
   
   
   
@@ -27,6 +37,7 @@ const UserProfile = () => {
         <div className="right">
           {activepage === "accountsettings" && <AccountSettings />}
           {activepage === "changepassword" && <ChangePassword />}
+          {activepage === "yourorders" && <Yourorders />}
         </div>
       </div>
     </div>

@@ -4,6 +4,8 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { all } from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Toast} from 'react-bootstrap';
+
 
 
 
@@ -11,14 +13,9 @@ import 'react-toastify/dist/ReactToastify.css';
         
 
         const userInfo = JSON.parse(localStorage.getItem("user"));
-        const userInfo1 = JSON.parse(localStorage.getItem("Aloggedin"));
-        const usenavigate = useNavigate();
+      
  
-  if (userInfo1){
-    toast.warn("You are not authorised");
-    usenavigate('/');
-  }
-  
+ 
   
         const [allData, setAllData] = useState({})
 
